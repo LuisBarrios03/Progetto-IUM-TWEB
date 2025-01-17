@@ -1,0 +1,11 @@
+Per aggiornare il progetto per le modifiche fatte da altrui: 
+
+git pull
+
+per aggiornare il progetto per le modifiche fatte da me:
+
+git add .
+
+git commit -m "message"
+
+git push
