@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Progetto-IUM-TWEB.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/Swagger/swaggerDocumentation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
