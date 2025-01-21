@@ -2,7 +2,7 @@
   "openapi": "3.0.2",
   "info": {
     "version": "1.0.0",
-    "title": "com3504",
+    "title": "Documetation Swagger",
     "description": "User management API",
     "termsOfService": "http://api_url/terms/",
     "contact": {

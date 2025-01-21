@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="" />
+    <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/Swagger/swaggerDocumentation.json" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/Swagger/swaggerDocumentation.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +71,7 @@
       <updated>1737375819655</updated>
       <workItem from="1737375822924" duration="4815000" />
       <workItem from="1737380842748" duration="1851000" />
+      <workItem from="1737458279067" duration="733000" />
     </task>
     <servers />
   </component>
