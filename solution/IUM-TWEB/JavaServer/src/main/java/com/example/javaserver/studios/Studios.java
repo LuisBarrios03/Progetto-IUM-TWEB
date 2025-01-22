@@ -14,9 +14,6 @@ public class Studios {
     @Id
     //genera un valore Long che si incrementa, lo salvo in identity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long identity; //????????
-
-    @Column(name= "id", nullable= false, columnDefinition= "INTEGER")
     private Long id;
     @Column(name= "studio", nullable= false, columnDefinition= "TEXT")
     private String studio;
@@ -30,12 +27,6 @@ public class Studios {
     }
 
     // Getters and Setters
-    public Long getIdentity() {
-        return identity;
-    }
-    public void setIdentity(Long identity) {
-        this.identity = identity;
-    }
 
     public Long getId() {
         return id;

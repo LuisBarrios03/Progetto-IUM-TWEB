@@ -12,10 +12,17 @@ import java.util.List;
 @Repository
 public interface ActorsRepository extends JpaRepository<Actors, Long> {
     // Trova tutti gli attori con un determinato ruolo
-    @Query(" SELECT a.name" +" FROM Actors a"+" WHERE a.role = :role")
+    @Query(" SELECT a FROM Actors a WHERE a.role = :role")
     List<Actors> findActorsByRole(@Param("role") String role);
 
     // Trova tutti gli attori il cui nome contiene una stringa specifica
     @Query("SELECT a FROM Actors a WHERE a.name LIKE %:name%")
     List<Actors> findActorsByNameContains(@Param("name") String name);
+
+
+    List<Actors>findTop100ByOrderByIdAsc();
+
+    // Query per trovare attori in base al ruolo
+    @Query("SELECT a FROM Actors a WHERE a.role = :role")
+    List<Actors> findByRole(String role);
 }

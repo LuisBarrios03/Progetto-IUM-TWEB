@@ -10,12 +10,8 @@ import jakarta.persistence.Column;
 @Entity
 @Table(name= "actors")
 public class Actors {
-    //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
-    //genera un valore Long che si incrementa, lo salvo in identity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //private Long identity; //????????
-    //@Column(name= "id", nullable= true, columnDefinition= "INTEGER")
     private Long id;
     @Column(name= "name", nullable= true, columnDefinition= "TEXT")
     private String name;
@@ -30,15 +26,6 @@ public class Actors {
         this.name = name;
         this.role = role;
     }
-
-    // Getters and Setters
-    /*public Long getIdentity() {
-        return identity;
-    }
-    public void setIdentity(Long identity) {
-        this.identity = identity;
-    }
-*/
     public Long getId() {
         return id;
     }
