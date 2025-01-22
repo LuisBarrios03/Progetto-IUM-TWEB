@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/actors/Actors.java" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/actors/Actors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/languages/Languages.java" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/languages/Languages.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,14 +43,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "branch-israa",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/luisb/Desktop/Progetto-IUM-TWEB/solution/IUM-TWEB/JavaServer",
+    "last_opened_file_path": "C:/Users/hp.LAPTOP-54KFQGSR/Desktop/PROGETTI/solution/IUM-TWEB/JavaServer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
@@ -58,8 +62,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
       </set>
     </attachedChunks>
   </component>
@@ -75,6 +79,8 @@
       <workItem from="1737380842748" duration="1851000" />
       <workItem from="1737458279067" duration="733000" />
       <workItem from="1737548904194" duration="298000" />
+      <workItem from="1737552109293" duration="724000" />
+      <workItem from="1737552859483" duration="75000" />
     </task>
     <servers />
   </component>

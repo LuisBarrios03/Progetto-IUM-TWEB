@@ -7,36 +7,35 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
+import java.util.Date;
+
 @Entity
 @Table(name= "movies")
 public class Movies {
     //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
-    //genera un valore Long che si incrementa, lo salvo in identity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long identity; //????????
-
     @Column(name = "id", nullable = false, columnDefinition = "INTEGER")
     private Long id;
     @Column(name = "name", nullable = false, columnDefinition = "TEXT")
     private String name;
     @Column(name = "date", nullable = true, columnDefinition = "INTEGER")
-    private String date;
+    private Date date;
     @Column(name = "tagline", nullable = true, columnDefinition = "TEXT")
     private String tagline;
     @Column(name = "description", nullable = true, columnDefinition = "TEXT")
     private String description;
     @Column(name = "minute", nullable = true, columnDefinition = "INTEGER")
-    private String minute;
+    private Long minute;
     @Column(name = "rating", nullable = true, columnDefinition = "INTEGER")
-    private String rating;
+    private Float rating;
 
 
     //constructor
     public Movies() {
     }
 
-    public Movies(Long id, String name, String date, String tagline, String description, String minute, String rating) {
+    public Movies(Long id, String name, Date date, String tagline, String description, Long minute, Float rating) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -47,17 +46,14 @@ public class Movies {
     }
 
     // Getters and Setters
-    public Long getIdentity() {return identity;}
-    public void setIdentity(Long identity) {this.identity = identity;}
-
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 
-    public String getDate() {return date;}
-    public void setDate(String date) {this.date = date;}
+    public Date getDate() {return date;}
+    public void setDate(Date date) {this.date = date;}
 
     public String getTagline() {return tagline;}
     public void setTagline(String tagline) {this.tagline = tagline;}
@@ -65,9 +61,9 @@ public class Movies {
     public String getDescription() {return description;}
     public void setDescription(String description) {this.description = description;}
 
-    public String getMinute() {return minute;}
-    public void setMinute(String minute) {this.minute = minute;}
+    public Long getMinute() {return minute;}
+    public void setMinute(Long minute) {this.minute = minute;}
 
-    public String getRating() {return rating;}
-    public void setRating(String rating) {this.rating = rating;}
+    public Float getRating() {return rating;}
+    public void setRating(Float rating) {this.rating = rating;}
 }

@@ -12,10 +12,7 @@ import jakarta.persistence.Column;
 public class Languages {
     //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
-    //genera un valore Long che si incrementa, lo salvo in identity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long identity; //????????
-
     @Column(name = "id", nullable = false, columnDefinition = "INTEGER")
     private Long id;
     @Column(name = "type", nullable = false, columnDefinition = "TEXT")
@@ -34,9 +31,6 @@ public class Languages {
     }
 
     // Getters and Setters
-    public Long getIdentity() {return identity;}
-    public void setIdentity(Long identity) {this.identity = identity;}
-
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
 
