@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Find Language API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f0f0f0;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<h1>Test Find Language API</h1>
+<form id="find-language-form">
+    <label for="language-name">Language Name:</label>
+    <input type="text" id="language-name" placeholder="Enter language name" required>
+    <button type="submit">Search</button>
+</form>
+
+<div id="results">
+    <h2>Results:</h2>
+    <ul id="language-list"></ul>
+</div>
+
+<script>
+    document.getElementById('find-language-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get the value from the input field
+        const languageName = document.getElementById('language-name').value;
+
+        // Send a POST request to the API
+        fetch('/languages/find_language', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(languageName)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Clear the previous results
+                const list = document.getElementById('language-list');
+                list.innerHTML = '';
+
+                // Add new results to the list
+                if (data.length > 0) {
+                    data.forEach(language => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `ID: ${language.id}, Language: ${language.language}, Type: ${language.type}`;
+                        list.appendChild(listItem);
+                    });
+                } else {
+                    const noResults = document.createElement('li');
+                    noResults.textContent = 'No languages found.';
+                    list.appendChild(noResults);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                const list = document.getElementById('language-list');
+                list.innerHTML = '<li>Error fetching results. Please check the API.</li>';
+            });
+    });
+</script>
+</body>
+</html>

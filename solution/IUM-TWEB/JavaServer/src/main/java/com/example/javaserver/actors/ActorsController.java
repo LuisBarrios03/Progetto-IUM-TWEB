@@ -17,10 +17,10 @@ public class ActorsController {
         this.actorsService = actorsService;
     }
 
-    @GetMapping("/{indentity}")
+   /* @GetMapping("/{indentity}")
     public Actors getActors(@PathVariable Long identity) {
         return ActorsRepository.findByIdentity(identity);
     }
-
+*/
 }
 

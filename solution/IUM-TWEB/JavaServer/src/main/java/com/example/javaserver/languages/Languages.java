@@ -13,12 +13,12 @@ public class Languages {
     //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, columnDefinition = "INTEGER")
     private Long id;
     @Column(name = "type", nullable = false, columnDefinition = "TEXT")
     private String type;
     @Column(name = "language", nullable = false, columnDefinition = "TEXT")
     private String language;
+
 
     //constructor
     public Languages() {
