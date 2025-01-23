@@ -10,7 +10,7 @@ import java.util.List;
 
 // Repositories
 @Repository
-public interface ActorsRepository extends JpaRepository<Actors, Long> {
+public interface ActorsRepository extends JpaRepository<Actors, idActors> {
     // Trova tutti gli attori con un determinato ruolo
     @Query(" SELECT a FROM Actors a WHERE a.role = :role")
     List<Actors> findActorsByRole(@Param("role") String role);
@@ -22,7 +22,4 @@ public interface ActorsRepository extends JpaRepository<Actors, Long> {
 
     List<Actors>findTop100ByOrderByIdAsc();
 
-    // Query per trovare attori in base al ruolo
-    @Query("SELECT a FROM Actors a WHERE a.role = :role")
-    List<Actors> findByRole(String role);
 }

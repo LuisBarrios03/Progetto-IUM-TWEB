@@ -42,7 +42,7 @@
         $.get("http://localhost:8081/actors/top100", function(data) {
             if (data && data.length > 0) {
                 data.forEach(function(actor) {
-                    $('#actor-list').append(`<li>${actor.id} - ${actor.role}</li>`);
+                    $('#actor-list').append(`<li>${actor.id} - ${actor.name} - ${actor.role}</li>`);
                 });
             } else {
                 $('#actor-list').append('<li>No actors found.</li>');

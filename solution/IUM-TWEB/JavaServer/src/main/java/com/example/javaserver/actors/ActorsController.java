@@ -48,10 +48,6 @@ public class ActorsController {
     public Actors createActor(@RequestBody Actors actors){
        return  actorsService.saveActor(actors);
     }
-    @DeleteMapping
-    public void deleteActor(@PathVariable Long id){
-        actorsService.deleteActor(id);
-    }
     @GetMapping("/top100")
     public List<Actors> getTop100Actors() {
         return actorsService.getTop100Actors();

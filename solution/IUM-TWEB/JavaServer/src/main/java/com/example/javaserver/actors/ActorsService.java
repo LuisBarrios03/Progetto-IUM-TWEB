@@ -31,9 +31,10 @@ public class ActorsService {
     public Actors saveActor(Actors actor) {
         return actorsRepository.save(actor);
     }
-    public void deleteActor(Long id) {
+    /*public void deleteActor(Long id) {
         actorsRepository.deleteById(id);
-    }
+    }*/
+
     /*public List<Actors> getTop100Actors() {
         return actorsRepository.findTop100ByOrderByIdAsc();
     }
