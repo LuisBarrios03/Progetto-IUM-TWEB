@@ -1,5 +1,6 @@
 package com.example.javaserver.actors;
 
+import com.example.javaserver.movies.Movies;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,6 +17,9 @@ public class Actors {
     @Column(name= "role", nullable= true, columnDefinition= "TEXT")
     private String role;
 
+    @ManyToOne
+    @JoinColumn(name = "id", referencedColumnName = "id")
+    private Movies movie;
     //constructor
     public Actors() {}
 

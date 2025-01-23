@@ -1,11 +1,10 @@
 package com.example.javaserver.movies;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import com.example.javaserver.actors.Actors;
+import com.example.javaserver.countries.Countries;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name= "movies")
@@ -28,6 +27,11 @@ public class Movies {
     @Column(name = "rating", nullable = true, columnDefinition = "INTEGER")
     private String rating;
 
+
+    @OneToMany(mappedBy = "movie")
+    private List<Actors> actors;
+    @OneToMany(mappedBy = "movie")
+    private List<Countries> countries;
 
     //constructor
     public Movies() {

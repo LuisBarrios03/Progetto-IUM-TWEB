@@ -1,11 +1,10 @@
 package com.example.javaserver.actors;
 
+import com.example.javaserver.movies.Movies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ActorsService {
@@ -16,34 +15,15 @@ public class ActorsService {
     public ActorsService(ActorsRepository actorsRepository) {
         this.actorsRepository = actorsRepository;
     }
-
-    //Return all id name role actors
-    List<Actors>getAllActors() {
+    public List<Actors> findAllActors() {
         return actorsRepository.findAll();
     }
 
-    public List<Actors> getActorsByName(String name) {
-        return actorsRepository.findActorsByNameContains(name);
-    }
-    public List<Actors> getActorsByRole(String role) {
-        return actorsRepository.findActorsByRole(role);
-    }
-    public Actors saveActor(Actors actor) {
-        return actorsRepository.save(actor);
-    }
-    /*public void deleteActor(Long id) {
-        actorsRepository.deleteById(id);
-    }*/
-
-    /*public List<Actors> getTop100Actors() {
-        return actorsRepository.findTop100ByOrderByIdAsc();
-    }
-*/
-    public List<Actors> getTop100Actors() {
-        List<Actors> actors = actorsRepository.findTop100ByOrderByIdAsc();
-        System.out.println("Actors fetched: " + actors.size()); // Log per verificare il numero di attori
-        actors.forEach(actor -> System.out.println(actor.getName()));  // Log per vedere i nomi degli attori
-        return actors;
+    public List<Actors>findActorsByMovieName(String movieName) {
+        return actorsRepository.findActorsByMovie(movieName);
     }
 
+    public List<Movies>findMoviesByActorName(String actorName) {
+        return actorsRepository.findMoviesByActorName(actorName);
+    }
 }
