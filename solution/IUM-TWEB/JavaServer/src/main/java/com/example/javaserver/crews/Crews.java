@@ -1,5 +1,6 @@
 package com.example.javaserver.crews;
 
+import com.example.javaserver.movies.Movies;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,11 +12,18 @@ public class Crews {
     //genera un valore Long che si incrementa, lo salvo in identity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Id
     @Column(name = "role", nullable = false, columnDefinition = "TEXT")
     private String role;
+
+    @Id
     @Column(name = "name", nullable = false, columnDefinition = "TEXT")
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Movies movie;
     //constructor
     public Crews() {
     }

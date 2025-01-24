@@ -1,11 +1,7 @@
 package com.example.javaserver.genres;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import com.example.javaserver.movies.Movies;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name= "genres")
@@ -15,8 +11,14 @@ public class Genres {
     //genera un valore Long che si incrementa, lo salvo in identity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Id
     @Column(name= "genre", nullable= false, columnDefinition= "TEXT")
     private String genre;
+
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Movies movie;
 
     //constructor
     public Genres() {}
