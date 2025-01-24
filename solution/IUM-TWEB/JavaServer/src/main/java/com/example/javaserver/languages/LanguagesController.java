@@ -16,7 +16,9 @@ import java.util.Optional;
 public class LanguagesController {
     private final LanguagesService languagesService;
     @Autowired
-    public LanguagesController(LanguagesService languagesService) {this.languagesService = languagesService;}
+    public LanguagesController(LanguagesService languagesService) {
+        this.languagesService = languagesService;
+    }
 
     @GetMapping
     public List<Languages> getAllLanguages() {
