@@ -12,6 +12,11 @@ import java.util.List;
 
 public interface CrewsRepository extends JpaRepository<Crews,idCrews> {
 
-    
+    @Query("SELECT c FROM Crews c INNER JOIN c.movie m WHERE m.name = :movieName")
+    List<Crews> findByMovieNames(String movieName);
+
+    //evita il join
+    List<Crews> getById(Long id);
+
 
 }
