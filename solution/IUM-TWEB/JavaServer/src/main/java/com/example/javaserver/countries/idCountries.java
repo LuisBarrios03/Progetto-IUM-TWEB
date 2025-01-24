@@ -4,4 +4,6 @@ public class idCountries implements Serializable {
 
     private Long id;
     private String country;
+
+
 }

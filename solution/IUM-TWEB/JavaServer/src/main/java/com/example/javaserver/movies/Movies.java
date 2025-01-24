@@ -2,6 +2,7 @@ package com.example.javaserver.movies;
 
 import com.example.javaserver.actors.Actors;
 import com.example.javaserver.countries.Countries;
+import com.example.javaserver.crews.Crews;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -32,7 +33,8 @@ public class Movies {
     private List<Actors> actors;
     @OneToMany(mappedBy = "movie")
     private List<Countries> countries;
-
+    @OneToMany(mappedBy = "movie")
+    private List<Crews> crews;
     //constructor
     public Movies() {
     }

@@ -2,13 +2,16 @@ package com.example.javaserver.countries;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/countries")
@@ -24,9 +27,15 @@ public class CountriesController {
     public List<Countries> getAllCountries() {
         return countriesService.getAllCountries();
     }
-    @GetMapping("/rating/{rating}")
-    public ResponseEntity<List<Countries>> getCountriesByMovieRating(@PathVariable Double rating) {
-        List<Countries> countries = countriesService.getCountriesByMovieRating(rating);
-        return ResponseEntity.ok(countries);
+
+    @GetMapping("name/{name}")
+    public List<String> getCountriesByName(@PathVariable String name) {
+        return countriesService.getCountriesByCountryByName(name);
     }
+
+    @GetMapping("FilmsByCountry")
+    public List<Object[]> getFilmsByCountry(){
+        return countriesService.getFindNumFilmsByCountry();
+    }
+
 }

@@ -3,6 +3,8 @@ package com.example.javaserver.countries;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -18,7 +20,13 @@ public class CountriesService {
         return countriesRepository.findAll();
     }
 
-    public List<Countries>getCountriesByMovieRating(Double rating){
-        return countriesRepository.findByMovieRatingGreaterThan(rating);
+    public List<String> getCountriesByCountryByName(String country){
+        return countriesRepository.findCountriesByMovieByName(country);
     }
+
+    public List<Object[]> getFindNumFilmsByCountry(){
+        return countriesRepository.findNumFilmsByCountry();
+    }
+
+
 }

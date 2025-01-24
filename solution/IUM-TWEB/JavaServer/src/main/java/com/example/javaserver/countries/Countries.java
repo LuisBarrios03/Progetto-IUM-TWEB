@@ -15,7 +15,7 @@ public class Countries {
     private String country;
 
     @ManyToOne
-    @JoinColumn(name = "id", referencedColumnName = "id")
+    @JoinColumn(name = "id", referencedColumnName = "id",nullable = false)
     private Movies movie;
 
     //constructor
