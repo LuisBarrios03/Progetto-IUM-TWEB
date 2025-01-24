@@ -20,7 +20,7 @@ public class Movies {
     @Column(name = "name", nullable = false, columnDefinition = "TEXT")
     private String name;
     @Column(name = "date", nullable = true, columnDefinition = "INTEGER")
-    private Date date;
+    private int date;
     @Column(name = "tagline", nullable = true, columnDefinition = "TEXT")
     private String tagline;
     @Column(name = "description", nullable = true, columnDefinition = "TEXT")
@@ -35,7 +35,7 @@ public class Movies {
     public Movies() {
     }
 
-    public Movies(Long id, String name, Date date, String tagline, String description, Long minute, Float rating) {
+    public Movies(Long id, String name, int date, String tagline, String description, Long minute, Float rating) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -52,8 +52,8 @@ public class Movies {
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 
-    public Date getDate() {return date;}
-    public void setDate(Date date) {this.date = date;}
+    public int getDate() {return date;}
+    public void setDate(int date) {this.date = date;}
 
     public String getTagline() {return tagline;}
     public void setTagline(String tagline) {this.tagline = tagline;}
