@@ -20,20 +20,20 @@ public class MoviesController {
         this.moviesService = moviesService;
     }
 
-    @GetMapping("/moviesname")
+    @GetMapping("/{name}")
     public List<Movies> moviesByName(@RequestParam String name) {
         return moviesService.moviesByName(name);
     }
 
-    @GetMapping("/")
+    @GetMapping("/{id}")
     public String moviesById(@RequestParam Long id) {
             return moviesService.moviesById(id);
     }
-    @GetMapping("/")
+    @GetMapping("/{date}")
     public List<Movies> moviesByDate(@RequestParam int date) {
         return moviesService.moviesByDate(date);
     }
-    @GetMapping("/")
+    @GetMapping("/{rating}")
     public List<Movies> moviesByRating(@RequestParam Float rating) {
         return moviesService.moviesByRating(rating);
     }

@@ -20,21 +20,23 @@ public class LanguagesController {
         this.languagesService = languagesService;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<Languages> getAllLanguages() {
         return languagesService.getAllLanguages();
     }
-    @GetMapping("/find_language")
+    @GetMapping("/{language}")
     public List<Languages> findLanguages(@RequestParam String language) {
         return languagesService.findLanguage(language);
     }
 
-    @GetMapping("/find_lang_byType")
+    @GetMapping("/{type}")
     public List<Languages> findLanguagesByType(@RequestParam String type) {
         return languagesService.findLanguagesByType(type);
     }
 
-    @GetMapping("/top100")
+    //to add: GET ALL
+
+    @GetMapping("/")
     public List<Languages> getTop100Languages() {
         return languagesService.getTop100Languages();
     }

@@ -1,28 +1,31 @@
 package com.example.javaserver.languages;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import com.example.javaserver.movies.Movies;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name= "languages")
 public class Languages {
-    //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    //chiave composta
+    @EmbeddedId
+    private LanguagesId ID;
+
+    //foreign key?
+    @ManyToOne
+    @MapsId("id") // Mappa il campo id della chiave composta
+    @JoinColumn(name = "id") // Nome della colonna che rappresenta la foreign key
+    private Movies movie;
+
+    //altre colonne
+    @Column(name = "id", nullable = false, columnDefinition = "INTEGER")
     private Long id;
     @Column(name = "type", nullable = false, columnDefinition = "TEXT")
     private String type;
     @Column(name = "language", nullable = false, columnDefinition = "TEXT")
     private String language;
-
-
     //constructor
-    public Languages() {
-    }
+    public Languages() {}
 
     public Languages(Long id, String type, String language) {
         this.id = id;

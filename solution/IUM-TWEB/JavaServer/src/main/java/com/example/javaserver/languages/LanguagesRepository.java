@@ -21,7 +21,8 @@ public interface LanguagesRepository  extends JpaRepository<Languages, Long> {
     @Query("SELECT l FROM Languages l WHERE l.type LIKE %:type%")
     List<Languages> findLanguagesByType(@Param("type") String type);
 
-
     //test primi 100
     List<Languages>findTop100ByOrderByIdAsc();
+
+    //trova le lingue per movie(uso del join)
 }

@@ -14,7 +14,6 @@ import java.util.Date;
 public class Movies {
     //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, columnDefinition = "INTEGER")
     private Long id;
     @Column(name = "name", nullable = false, columnDefinition = "TEXT")
@@ -32,8 +31,7 @@ public class Movies {
 
 
     //constructor
-    public Movies() {
-    }
+    public Movies() {}
 
     public Movies(Long id, String name, int date, String tagline, String description, Long minute, Float rating) {
         this.id = id;

@@ -20,7 +20,7 @@ public class LanguagesService {
         this.languagesRepository = languagesRepository;
     }
 
-    List<Languages> getAllLanguages() {//to remove
+    List<Languages> getAllLanguages() {
         return languagesRepository.findAll();
     }
 
@@ -31,11 +31,9 @@ public class LanguagesService {
     public List<Languages> findLanguagesByType(String type) {
         return languagesRepository.findLanguagesByType(type);
     }
-    public Languages save(Languages languages) { //to remove
-        return languagesRepository.save(languages);
-    }
 
-    public List<Languages> getTop100Languages(){//to remove
+
+    public List<Languages> getTop100Languages(){//??to remove??
         return languagesRepository.findTop100ByOrderByIdAsc();
     };
 }

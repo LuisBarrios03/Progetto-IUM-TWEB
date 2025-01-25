@@ -19,7 +19,8 @@ public class PostersController {
     public PostersController(PostersRepository postersRepository) {
         this.postersRepository = postersRepository;
     }
-    @GetMapping
+
+    @GetMapping("/")
     public List<Posters> getAllPosters() {
         return postersRepository.getPosters();
     }
