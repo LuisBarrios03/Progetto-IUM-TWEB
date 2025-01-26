@@ -1,14 +1,10 @@
 package com.example.javaserver.actors;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
 
-@Entity
-@Table(name= "actors")
 public class Actors {
     //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
@@ -59,4 +55,5 @@ public class Actors {
     public void setRole(String role) {
         this.role = role;
     }
+
 }
