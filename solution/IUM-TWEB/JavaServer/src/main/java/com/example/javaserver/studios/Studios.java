@@ -1,22 +1,22 @@
 package com.example.javaserver.studios;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import com.example.javaserver.movies.Movies;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name= "studios")
+@IdClass(IdStudios.class)
 public class Studios {
-    //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
-    //genera un valore Long che si incrementa, lo salvo in identity
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name= "id", nullable= false, columnDefinition= "INTEGER")
     private Long id;
+    @Id
     @Column(name= "studio", nullable= false, columnDefinition= "TEXT")
     private String studio;
+
+    @ManyToOne
+    @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
+    private Movies movie;
 
     //constructor
     public Studios() {}
@@ -27,7 +27,6 @@ public class Studios {
     }
 
     // Getters and Setters
-
     public Long getId() {
         return id;
     }
