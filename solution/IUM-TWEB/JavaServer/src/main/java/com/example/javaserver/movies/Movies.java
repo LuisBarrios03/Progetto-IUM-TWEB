@@ -1,11 +1,11 @@
 package com.example.javaserver.movies;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import com.example.javaserver.actors.Actors;
+import com.example.javaserver.countries.Countries;
+import com.example.javaserver.crews.Crews;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name= "movies")
@@ -14,9 +14,6 @@ public class Movies {
     @Id
     //genera un valore Long che si incrementa, lo salvo in identity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long identity; //????????
-
-    @Column(name = "id", nullable = false, columnDefinition = "INTEGER")
     private Long id;
     @Column(name = "name", nullable = false, columnDefinition = "TEXT")
     private String name;
@@ -32,6 +29,12 @@ public class Movies {
     private String rating;
 
 
+    @OneToMany(mappedBy = "movie")
+    private List<Actors> actors;
+    @OneToMany(mappedBy = "movie")
+    private List<Countries> countries;
+    @OneToMany(mappedBy = "movie")
+    private List<Crews> crews;
     //constructor
     public Movies() {
     }
@@ -46,9 +49,6 @@ public class Movies {
         this.rating = rating;
     }
 
-    // Getters and Setters
-    public Long getIdentity() {return identity;}
-    public void setIdentity(Long identity) {this.identity = identity;}
 
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}

@@ -1,0 +1,57 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actor List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>List of Actors</h1>
+<ul id="actor-list"></ul>
+
+<script>
+    // Funzione per ottenere i dati dal server e visualizzarli
+    $(document).ready(function() {
+        $.get("/actors", function(data) {
+            data.forEach(function(actor) {
+                $('#actor-list').append(`<li>${actor.name} - ${actor.role}</li>`);
+            });
+        });
+    });
+</script>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Actors</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Top 100 Actors</h1>
+<ul id="actor-list"></ul>
+
+<script>
+    $(document).ready(function() {
+        $.get("http://localhost:8081/actors/top100", function(data) {
+            if (data && data.length > 0) {
+                data.forEach(function(actor) {
+                    $('#actor-list').append(`<li>${actor.id} - ${actor.name} - ${actor.role}</li>`);
+                });
+            } else {
+                $('#actor-list').append('<li>No actors found.</li>');
+            }
+        }).fail(function() {
+            $('#actor-list').append('<li>Error loading actors.</li>');
+        });
+    });
+</script>
+</body>
+</html>
+

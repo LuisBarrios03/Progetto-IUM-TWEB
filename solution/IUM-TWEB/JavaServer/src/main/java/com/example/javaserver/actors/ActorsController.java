@@ -1,22 +1,59 @@
 package com.example.javaserver.actors;
 
+import com.example.javaserver.movies.Movies;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/actors")
 public class ActorsController {
-
     private final ActorsService actorsService;
-    // define an Autowired service in the constructor
+
     @Autowired
     public ActorsController(ActorsService actorsService) {
         this.actorsService = actorsService;
     }
 
-    @GetMapping("/{indentity}")
-    public Actors getActors(@PathVariable Long identity) {
-        return ActorsRepository.findByIdentity(identity);
+    @GetMapping
+    public ResponseEntity<List<Actors>> getAllActors() {
+        List<Actors> actors = actorsService.findAllActors();
+
+        if (actors == null || actors.isEmpty()) {
+            // Restituisce 404 (Not Found) se non ci sono attori
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        // Restituisce 200 (OK) con la lista degli attori
+        return ResponseEntity.ok(actors);
     }
 
+    @GetMapping("/by-movie-name/{movieName}")
+    public ResponseEntity<List<Actors>> getActorsByMovieName(@PathVariable String movieName) {
+        List<Actors> actors = actorsService.findActorsByMovieName(movieName);
 
+        if (actors == null || actors.isEmpty()) {
+            // Restituisce 404 (Not Found) se non ci sono attori per quel film
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        // Restituisce 200 (OK) con la lista degli attori
+        return ResponseEntity.ok(actors);
+    }
+
+    @GetMapping("/by-actor-name/{actorName}")
+    public ResponseEntity<List<Movies>> getMoviesByActorName(@PathVariable String actorName) {
+        List<Movies> movies = actorsService.findMoviesByActorName(actorName);
+
+        if (movies == null || movies.isEmpty()) {
+            // Restituisce 404 (Not Found) se non ci sono film per quell'attore
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        // Restituisce 200 (OK) con la lista dei film
+        return ResponseEntity.ok(movies);
+    }
 }
