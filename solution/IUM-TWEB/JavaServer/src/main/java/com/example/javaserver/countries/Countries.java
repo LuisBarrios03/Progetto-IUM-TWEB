@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 @IdClass(idCountries.class)
 public class Countries {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Id
     @Column(name= "country", nullable= false, columnDefinition= "TEXT")

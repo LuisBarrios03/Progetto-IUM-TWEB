@@ -18,4 +18,6 @@ public interface CountriesRepository extends JpaRepository<Countries, idCountrie
     @Query("SELECT COUNT(m) AS numFilms, c.country AS countryName FROM Movies m JOIN m.countries c GROUP BY c.country")
     List<Object[]> findNumFilmsByCountry();
 
+    @Query("SELECT c  FROM Countries c JOIN c.movie m WHERE m.id = :id")
+    List<Countries> findCountriesByCountryId(@Param("id") Long id);
 }

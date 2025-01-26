@@ -5,11 +5,10 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name= "genres")
+@IdClass(Genres.class)
 public class Genres {
     //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
-    //genera un valore Long che si incrementa, lo salvo in identity
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Id
@@ -17,7 +16,7 @@ public class Genres {
     private String genre;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id",referencedColumnName = "id")
     private Movies movie;
 
     //constructor

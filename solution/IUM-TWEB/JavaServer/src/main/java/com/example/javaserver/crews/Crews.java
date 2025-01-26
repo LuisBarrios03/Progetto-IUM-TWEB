@@ -9,7 +9,6 @@ import jakarta.persistence.*;
 public class Crews {
     //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
-    //genera un valore Long che si incrementa, lo salvo in identity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

@@ -1,6 +1,8 @@
 package com.example.javaserver.genres;
 
-public class idGenres {
+import java.io.Serializable;
+
+public class idGenres implements Serializable {
     private Long id;
     private String genre;
 }

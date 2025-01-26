@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 @IdClass(idActors.class)
 public class Actors {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Id
     @Column(name= "name", nullable= true, columnDefinition= "TEXT")

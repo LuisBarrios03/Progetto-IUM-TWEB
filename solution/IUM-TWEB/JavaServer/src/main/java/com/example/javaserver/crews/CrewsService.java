@@ -17,7 +17,11 @@ public class CrewsService {
         return crewsRepository.findAll();
     }
 
-    public List<Crews> getfindByMovieName(String movieName) {
-        return crewsRepository.findByMovieName(movieName);
+    public List<Crews> getFindByMovieName(String movieName) {
+        return crewsRepository.findByMovieNames(movieName);
+    }
+
+    public List<Crews> getByid(Long id) {
+        return crewsRepository.getById(id);
     }
 }
