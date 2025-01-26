@@ -9,7 +9,6 @@ import java.util.Date;
 @Table(name= "releases")
 @IdClass(IdReleases.class)
 public class Releases {
-    //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
     @Column(name = "id", nullable = false, columnDefinition = "INTEGER")
     private Long id;
