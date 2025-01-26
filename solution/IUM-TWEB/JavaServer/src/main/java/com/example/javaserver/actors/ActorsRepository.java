@@ -19,8 +19,6 @@ public interface ActorsRepository extends JpaRepository<Actors, Long> {
     // Trova tutti gli attori il cui nome contiene una stringa specifica
     @Query("SELECT a FROM Actors a WHERE a.name LIKE %:name%")
     List<Actors> findActorsByNameContains(@Param("name") String name);
-
-    
 }
 
 
