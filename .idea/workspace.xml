@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/releases/ReleasesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/releases/ReleasesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/releases/ReleasesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/studios/StudiosController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/studios/StudiosRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/studios/StudiosService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/themes/ThemesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/themes/ThemesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/themes/ThemesService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/Swagger/swaggerDocumentation.json" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/Swagger/swaggerDocumentation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/releases/Releases.java" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/releases/Releases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/studios/Studios.java" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/studios/Studios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/themes/Themes.java" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/java/com/example/javaserver/themes/Themes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/JavaServer/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;branchIrene&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/luisb/Downloads/Swagger Introduction&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -57,7 +69,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
       </set>
     </attachedChunks>
   </component>
@@ -72,6 +84,10 @@
       <workItem from="1737375822924" duration="4815000" />
       <workItem from="1737380842748" duration="1851000" />
       <workItem from="1737458279067" duration="733000" />
+      <workItem from="1737561350535" duration="312000" />
+      <workItem from="1737561678071" duration="54000" />
+      <workItem from="1737561792382" duration="1027000" />
+      <workItem from="1737565741613" duration="1254000" />
     </task>
     <servers />
   </component>
