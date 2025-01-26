@@ -50,7 +50,7 @@ public class CrewsController {
     public ResponseEntity<List<Crews>> findCrewsById(@PathVariable Long id) {
         List<Crews> crews = crewsService.getByid(id);
 
-        if(crews == null && crews.isEmpty()) { return  ResponseEntity.status(HttpStatus.NOT_FOUND).build(); }
+        if(crews == null || crews.isEmpty()) { return  ResponseEntity.status(HttpStatus.NOT_FOUND).build(); }
         return ResponseEntity.ok(crews);
     }
 
