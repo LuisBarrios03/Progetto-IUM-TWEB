@@ -23,10 +23,9 @@ public class ThemesController {
     }
 
     @GetMapping("/themes-by-movie/{movieName}")
-    public ResponseEntity<List<Themes>> getThemesByMovie(@PathVariable String movieName){
-        List<Themes> themes = themesService.getThemesByMovieName(movieName);
+    public ResponseEntity<List<Object[]>> getThemesByMovie(@PathVariable String movieName){
+        List<Object[]> themes = themesService.getThemesByMovieName(movieName);
         if(themes == null || themes.isEmpty()) {return ResponseEntity.status(HttpStatus.NOT_FOUND).build();}
         return ResponseEntity.ok(themes);
     }
-
 }

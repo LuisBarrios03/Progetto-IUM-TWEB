@@ -24,8 +24,8 @@ public class StudiosController {
 
     //cerco i film che uno studio ha girato tramite il nome dello studio
     @GetMapping("/studio-by-movie/{movieName}")
-    public ResponseEntity<List<Studios>> getStudioByMovie(@PathVariable String movieName){
-        List<Studios> studios = studiosService.getStudiosByStudioByName(movieName);
+    public ResponseEntity<List<Object[]>> getStudioByMovie(@PathVariable String movieName){
+        List<Object[]> studios = studiosService.getStudiosByStudioByName(movieName);
         if (studios == null || studios.isEmpty()) { return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); }
         return ResponseEntity.ok(studios);
 
@@ -41,13 +41,12 @@ public class StudiosController {
 
     //Cerca i film girati da uno studio tramite il nome dello studio
     @GetMapping("/movies-by-studio/{studioName}")
-    public ResponseEntity<List<Studios>> getMoviesByStudio(@PathVariable String studioName) {
-        List<Studios> studios = studiosService.getMoviesByStudio(studioName);
+    public ResponseEntity<List<Object[]>> getMoviesByStudio(@PathVariable String studioName) {
+        List<Object[]> studios = studiosService.getMoviesByStudio(studioName);
         if (studios == null || studios.isEmpty()) { return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); }
         return ResponseEntity.ok(studios);
 
     }
-
 
     // Stampa tutti gli studio con i relativi film girati
     @GetMapping("/studios-with-movies")

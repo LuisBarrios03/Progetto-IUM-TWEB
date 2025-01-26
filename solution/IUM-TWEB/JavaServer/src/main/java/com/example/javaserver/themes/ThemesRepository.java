@@ -12,5 +12,5 @@ public interface ThemesRepository extends JpaRepository<Themes, IdThemes> {
     // Query per ottenere tutti i temi con i relativi film
     //trovo i temi  in base al nome del film
     @Query("SELECT t.theme FROM Themes t JOIN t.movie m WHERE m.name = :movieName")
-    List<Themes> findThemesByMovieName(@Param("movieName") String movieName);
+    List<Object[]> findThemesByMovieName(@Param("movieName") String movieName);
 }
