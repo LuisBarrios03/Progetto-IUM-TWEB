@@ -1,28 +1,33 @@
 package com.example.javaserver.languages;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import com.example.javaserver.movies.Movies;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name= "languages")
+@IdClass(LanguagesId.class)
 public class Languages {
-    //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
+
+
+
+    //altre colonne
     @Id
-    //genera un valore Long che si incrementa, lo salvo in identity
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, columnDefinition = "INTEGER")
     private Long id;
+    @Id
     @Column(name = "type", nullable = false, columnDefinition = "TEXT")
     private String type;
+    @Id
     @Column(name = "language", nullable = false, columnDefinition = "TEXT")
     private String language;
 
+    @ManyToOne
+    //foreign key?
+    @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
+    private Movies movie;
+
     //constructor
-    public Languages() {
-    }
+    public Languages() {}
 
     public Languages(Long id, String type, String language) {
         this.id = id;
@@ -30,6 +35,7 @@ public class Languages {
         this.language = language;
     }
 
+    // Getters and Setters
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
 

@@ -1,20 +1,25 @@
 package com.example.javaserver.posters;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import com.example.javaserver.crews.Crews;
+import com.example.javaserver.movies.Movies;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name= "posters")
+@IdClass(PostersId.class)
 public class Posters {
-    //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
+
+
+    @OneToOne
+    @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
+    private Movies movie;
+
     @Id
-    //genera un valore Long che si incrementa, lo salvo in identity
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name= "id", nullable= false, columnDefinition= "INTEGER")
     private Long id;
+    @Id
     @Column(name= "link", nullable= false, columnDefinition= "TEXT")
     private String link;
 
@@ -26,6 +31,7 @@ public class Posters {
         this.link = link;
     }
 
+    // Getters and Setters
     public Long getId() {
         return id;
     }
