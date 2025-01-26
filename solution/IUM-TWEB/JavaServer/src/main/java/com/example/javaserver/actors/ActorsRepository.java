@@ -20,6 +20,7 @@ public interface ActorsRepository extends JpaRepository<Actors, Long> {
     @Query("SELECT a FROM Actors a WHERE a.name LIKE %:name%")
     List<Actors> findActorsByNameContains(@Param("name") String name);
 
+    
 }
 
 
