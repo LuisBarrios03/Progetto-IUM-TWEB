@@ -1,7 +1,10 @@
 package com.example.javaserver.posters;
 
+import com.example.javaserver.crews.Crews;
 import com.example.javaserver.movies.Movies;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name= "posters")
@@ -9,8 +12,7 @@ import jakarta.persistence.*;
 public class Posters {
 
 
-    @ManyToOne
-    //foreign key?
+    @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
     private Movies movie;
 

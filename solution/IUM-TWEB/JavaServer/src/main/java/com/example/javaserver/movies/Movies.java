@@ -1,7 +1,14 @@
 package com.example.javaserver.movies;
 
+import com.example.javaserver.actors.Actors;
+import com.example.javaserver.countries.Countries;
+import com.example.javaserver.crews.Crews;
+import com.example.javaserver.genres.Genres;
 import com.example.javaserver.languages.Languages;
 import com.example.javaserver.posters.Posters;
+import com.example.javaserver.releases.Releases;
+import com.example.javaserver.studios.Studios;
+import com.example.javaserver.themes.Themes;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -27,11 +34,28 @@ public class Movies {
     @Column(name = "rating", nullable = true, columnDefinition = "INTEGER")
     private Float rating;
 
-//collegamento one to many per le altre tabelle
+//collegamento con le altre tabelle
     @OneToMany(mappedBy = "movie")
     private List<Languages> languages;
+    @OneToOne(mappedBy = "movie")
+    private Posters posters;
     @OneToMany(mappedBy = "movie")
-    private List<Posters> posters;
+    private List<Actors> actors;
+    @OneToMany(mappedBy = "movie")
+    private List<Countries> countries;
+    @OneToMany(mappedBy = "movie")
+    private List<Crews> crews;
+    @OneToMany(mappedBy = "movie")
+    private List<Genres> genre;
+    @OneToMany(mappedBy = "movie")
+    private List<Studios> studio;
+    @OneToMany(mappedBy = "movie")
+    private List<Releases> release;
+    @OneToMany(mappedBy = "movie")
+    private List<Themes> theme;
+
+
+
 
 
     //constructor
