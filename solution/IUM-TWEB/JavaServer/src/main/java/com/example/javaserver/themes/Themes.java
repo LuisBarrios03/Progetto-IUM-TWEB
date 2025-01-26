@@ -1,25 +1,23 @@
 package com.example.javaserver.themes;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import com.example.javaserver.movies.Movies;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name= "themes")
+@IdClass(IdThemes.class)
 public class Themes {
-    //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
-    //genera un valore Long che si incrementa, lo salvo in identity
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long identity; //????????
-
     @Column(name= "id", nullable= false, columnDefinition= "INTEGER")
     private Long id;
+    @Id
     @Column(name= "theme", nullable= false, columnDefinition= "TEXT")
     private String theme;
+
+    @ManyToOne
+    // Collega "id" di ThemesId con la chiave primaria di Movie
+    @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
+    private Movies movies; // Relazione molti-a-uno con Movies
 
     //constructor
     public Themes() {}
@@ -29,15 +27,7 @@ public class Themes {
         this.theme = theme;
     }
 
-
     // Getters and Setters
-    public Long getIdentity() {
-        return identity;
-    }
-    public void setIdentity(Long identity) {
-        this.identity = identity;
-    }
-
     public Long getId() {
         return id;
     }
@@ -48,6 +38,8 @@ public class Themes {
     public String getTheme() {
         return theme;
     }
-    public void setTheme(String theme) {this.theme = theme;}
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
 
 }
