@@ -17,7 +17,7 @@ public class Themes {
     @ManyToOne
     // Collega "id" di ThemesId con la chiave primaria di Movie
     @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
-    private Movies movies; // Relazione molti-a-uno con Movies
+    private Movies movie; // Relazione molti-a-uno con Movies
 
     //constructor
     public Themes() {}

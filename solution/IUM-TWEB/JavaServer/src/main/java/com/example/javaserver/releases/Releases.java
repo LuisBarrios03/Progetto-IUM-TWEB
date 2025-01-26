@@ -24,7 +24,7 @@ public class Releases {
     @ManyToOne
     // Collega "id" di ReleasesId con la chiave primaria di Movie
     @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
-    private Movies movies; // Relazione molti-a-uno con Movies
+    private Movies movie; // Relazione molti-a-uno con Movies
 
     //constructor
     public Releases() {
