@@ -1,6 +1,8 @@
 package com.example.javaserver.themes;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,13 +17,16 @@ public class ThemesController {
         this.themesService = themesService;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<Themes> getAllThemes() {
         return themesService.getAllThemes();
     }
 
-    @GetMapping("/themes-by-movie")
-    public List<String> getThemesByMovie(@RequestParam String movieName) {
-        return themesService.getThemesByMovieName(movieName);
+    @GetMapping("/themes-by-movie/{movieName}")
+    public ResponseEntity<List<Themes>> getThemesByMovie(@PathVariable String movieName){
+        List<Themes> themes = themesService.getThemesByMovieName(movieName);
+        if(themes == null || themes.isEmpty()) {return ResponseEntity.status(HttpStatus.NOT_FOUND).build();}
+        return ResponseEntity.ok(themes);
     }
+
 }

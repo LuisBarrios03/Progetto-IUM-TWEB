@@ -20,17 +20,17 @@ public class StudiosService {
     }
 
     // trovo lo studio in base al nome del film per vedere da quale studio è stato prodotto un film
-    public List<String> getStudiosByStudioByName(String studio){
+    public List<Studios> getStudiosByStudioByName(String studio){
         return studiosRepository.findStudioByMovieByName(studio);
     }
 
     //conto il numero di film prodotto da ogni studio
-    public List<Object[]> getFindNumFilmsByStudio(){
-        return studiosRepository.countMoviesByStudio();
+    public List<Object[]> getFindNumFilmsByStudio(String studioName){
+        return studiosRepository.countMoviesByStudio(studioName);
     }
 
     //cerco i film che uno studio ha girato tramite il nome dello studio
-    public List<String> getMoviesByStudio(String studioName) {
+    public List<Studios> getMoviesByStudio(String studioName) {
         return studiosRepository.findMoviesByStudioName(studioName);
     }
 

@@ -19,7 +19,7 @@ public class ThemesService {
     }
 
     // trovo i temi  in base al nome del film
-    public List<String> getThemesByMovieName(String movieName) {
+    public List<Themes> getThemesByMovieName(String movieName) {
         return themesRepository.findThemesByMovieName(movieName);
     }
 

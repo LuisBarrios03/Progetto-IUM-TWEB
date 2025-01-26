@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ReleasesRepository extends JpaRepository<Releases, Long>  {
+public interface ReleasesRepository extends JpaRepository<Releases, IdReleases>  {
 
     // dato un certo country voglio sapere il type, il rating e name film, date
     @Query("SELECT r.date, r.type, r.rating, m.name " +
