@@ -9,10 +9,6 @@ import jakarta.persistence.*;
 public class Languages {
 
 
-    @ManyToOne
-    //foreign key?
-    @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
-    private Movies movies;
 
     //altre colonne
     @Id
@@ -24,6 +20,12 @@ public class Languages {
     @Id
     @Column(name = "language", nullable = false, columnDefinition = "TEXT")
     private String language;
+
+    @ManyToOne
+    //foreign key?
+    @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
+    private Movies movie;
+
     //constructor
     public Languages() {}
 

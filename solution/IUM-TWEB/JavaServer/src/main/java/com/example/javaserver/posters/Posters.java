@@ -12,7 +12,7 @@ public class Posters {
     @ManyToOne
     //foreign key?
     @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
-    private Movies movies;
+    private Movies movie;
 
     @Id
     @Column(name= "id", nullable= false, columnDefinition= "INTEGER")

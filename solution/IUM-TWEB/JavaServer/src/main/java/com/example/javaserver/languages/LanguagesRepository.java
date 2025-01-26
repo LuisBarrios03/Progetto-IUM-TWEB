@@ -9,11 +9,10 @@ import java.util.List;
 
 
 @Repository
-public interface LanguagesRepository  extends JpaRepository<Languages, Long> {
+public interface LanguagesRepository  extends JpaRepository<Languages, LanguagesId> {
     //trova le lingue per nome della lingua
     @Query("SELECT l FROM Languages l WHERE l.language LIKE %:language%")
     List<Languages> findLanguage(@Param("language") String language);
-
 
     //trova le lingue per tipologia
     @Query("SELECT l FROM Languages l WHERE l.type LIKE %:type%")

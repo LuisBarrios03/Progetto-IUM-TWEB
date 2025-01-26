@@ -1,6 +1,8 @@
 package com.example.javaserver.languages;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -17,22 +19,35 @@ public class LanguagesController {
     }
 
     @GetMapping("/")
-    public List<Languages> getAllLanguages() {
-        return languagesService.getAllLanguages();
-    }
-    @GetMapping("/{language}")
-    public List<Languages> findLanguages(@RequestParam String language) {
-        return languagesService.findLanguage(language);
+    public ResponseEntity <List<Languages>> getAllLanguages() {
+        List<Languages> languages = languagesService.getAllLanguages();
+        if(languages == null || languages.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(languages);
     }
 
-    @GetMapping("/{type}")
-    public List<Languages> findLanguagesByType(@RequestParam String type) {
-        return languagesService.findLanguagesByType(type);
+    @GetMapping("/name/{language}")
+    public ResponseEntity <List<Languages>> findLanguages(@PathVariable String language) {
+        List<Languages> languages = languagesService.findLanguage(language);
+        if(languages == null || languages.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(languages);
+    }
+
+    @GetMapping("/type/{type}")
+    public  ResponseEntity <List<Languages>> findLanguagesByType(@PathVariable String type) {
+        List<Languages> languages = languagesService.findLanguagesByType(type);
+        if(languages == null || languages.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(languages);
     }
 
     //to add: GET ALL
 
-    @GetMapping("/")
+    @GetMapping("/get100")
     public List<Languages> getTop100Languages() {
         return languagesService.getTop100Languages();
     }

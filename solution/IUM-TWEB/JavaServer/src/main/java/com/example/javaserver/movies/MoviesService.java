@@ -15,7 +15,7 @@ public class MoviesService {
     public List<Movies> moviesByName(String name) {
         return moviesRepository.moviesByName(name);
     }
-    public String moviesById(Long id) {
+    public List<Movies> moviesById(Long id) {
         return moviesRepository.movieById(id);
     }
     public List<Movies> moviesByRating(Float rating) {

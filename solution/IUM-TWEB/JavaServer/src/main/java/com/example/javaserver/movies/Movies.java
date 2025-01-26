@@ -1,9 +1,10 @@
 package com.example.javaserver.movies;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import com.example.javaserver.languages.Languages;
+import com.example.javaserver.posters.Posters;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 
 @Entity
@@ -16,7 +17,7 @@ public class Movies {
     @Column(name = "name", nullable = false, columnDefinition = "TEXT")
     private String name;
     @Column(name = "date", nullable = true, columnDefinition = "INTEGER")
-    private int date;
+    private Integer date;
     @Column(name = "tagline", nullable = true, columnDefinition = "TEXT")
     private String tagline;
     @Column(name = "description", nullable = true, columnDefinition = "TEXT")
@@ -26,11 +27,17 @@ public class Movies {
     @Column(name = "rating", nullable = true, columnDefinition = "INTEGER")
     private Float rating;
 
+//collegamento one to many per le altre tabelle
+    @OneToMany(mappedBy = "movie")
+    private List<Languages> languages;
+    @OneToMany(mappedBy = "movie")
+    private List<Posters> posters;
+
 
     //constructor
     public Movies() {}
 
-    public Movies(Long id, String name, int date, String tagline, String description, Long minute, Float rating) {
+    public Movies(Long id, String name, Integer date, String tagline, String description, Long minute, Float rating) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -47,8 +54,8 @@ public class Movies {
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 
-    public int getDate() {return date;}
-    public void setDate(int date) {this.date = date;}
+    public Integer getDate() {return date;}
+    public void setDate(Integer date) {this.date = date;}
 
     public String getTagline() {return tagline;}
     public void setTagline(String tagline) {this.tagline = tagline;}

@@ -16,4 +16,8 @@ public class PostersService {
     public List<Posters> getPosters() {
         return postersRepository.getPosters();
     }
+
+    public List<Posters> getPostersById(Long id) {
+        return postersRepository.getPostersById(id);
+    }
 }
