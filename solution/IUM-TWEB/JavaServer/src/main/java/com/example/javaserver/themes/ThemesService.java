@@ -7,9 +7,9 @@ import java.util.List;
 
 @Service
 public class ThemesService {
-    @Autowired
     private final ThemesRepository themesRepository;
 
+    @Autowired
     public ThemesService(ThemesRepository themesRepository) {
         this.themesRepository = themesRepository;
     }

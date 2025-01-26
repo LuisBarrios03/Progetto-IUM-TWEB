@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public class ReleasesService {
-    private ReleasesRepository releasesRepository;
+    private final ReleasesRepository releasesRepository;
     @Autowired
     public ReleasesService(ReleasesRepository releasesRepository) {
         this.releasesRepository = releasesRepository;

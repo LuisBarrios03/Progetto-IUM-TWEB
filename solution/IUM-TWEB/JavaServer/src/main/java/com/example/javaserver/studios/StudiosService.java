@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public class StudiosService {
-    private StudiosRepository studiosRepository;
+    private final StudiosRepository studiosRepository;
 
     @Autowired
     public StudiosService(StudiosRepository studiosRepository) {
