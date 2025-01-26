@@ -1,13 +1,10 @@
 package com.example.javaserver.movies;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
-import java.util.Date;
 
 @Entity
 @Table(name= "movies")

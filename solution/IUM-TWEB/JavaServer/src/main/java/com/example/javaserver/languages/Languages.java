@@ -5,17 +5,14 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name= "languages")
+@IdClass(LanguagesId.class)
 public class Languages {
 
-    //chiave composta
-    @EmbeddedId
-    private LanguagesId ID;
-
-    //foreign key?
+    @Id
     @ManyToOne
-    @MapsId("id") // Mappa il campo id della chiave composta
-    @JoinColumn(name = "id") // Nome della colonna che rappresenta la foreign key
-    private Movies movie;
+    //foreign key?
+    @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
+    private Movies movies;
 
     //altre colonne
     @Column(name = "id", nullable = false, columnDefinition = "INTEGER")

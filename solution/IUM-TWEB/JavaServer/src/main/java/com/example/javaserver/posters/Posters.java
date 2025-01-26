@@ -5,15 +5,14 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name= "posters")
+@IdClass(PostersId.class)
 public class Posters {
-    @EmbeddedId
-    private PostersId ID;
 
-    //foreign key?
+    @Id
     @ManyToOne
-    @MapsId("id") // Mappa il campo id della chiave composta
-    @JoinColumn(name = "id") // Nome della colonna che rappresenta la foreign key
-    private Movies movie;
+    //foreign key?
+    @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
+    private Movies movies;
 
     @Column(name= "id", nullable= false, columnDefinition= "INTEGER")
     private Long id;
