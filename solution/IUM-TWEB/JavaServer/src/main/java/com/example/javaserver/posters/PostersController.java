@@ -8,14 +8,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/posters")
 public class PostersController {
-    private final PostersRepository postersRepository;
+    private final PostersService postersService;
     @Autowired
-    public PostersController(PostersRepository postersRepository) {
-        this.postersRepository = postersRepository;
+    public PostersController(PostersService postersService) {
+        this.postersService = postersService;
     }
 
     @GetMapping("/")
     public List<Posters> getAllPosters() {
-        return postersRepository.getPosters();
+        return postersService.getPosters();
     }
 }

@@ -8,17 +8,20 @@ import jakarta.persistence.*;
 @IdClass(LanguagesId.class)
 public class Languages {
 
-    @Id
+
     @ManyToOne
     //foreign key?
     @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
     private Movies movies;
 
     //altre colonne
+    @Id
     @Column(name = "id", nullable = false, columnDefinition = "INTEGER")
     private Long id;
+    @Id
     @Column(name = "type", nullable = false, columnDefinition = "TEXT")
     private String type;
+    @Id
     @Column(name = "language", nullable = false, columnDefinition = "TEXT")
     private String language;
     //constructor

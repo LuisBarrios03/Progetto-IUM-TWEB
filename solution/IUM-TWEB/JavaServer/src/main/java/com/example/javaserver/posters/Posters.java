@@ -8,14 +8,16 @@ import jakarta.persistence.*;
 @IdClass(PostersId.class)
 public class Posters {
 
-    @Id
+
     @ManyToOne
     //foreign key?
     @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
     private Movies movies;
 
+    @Id
     @Column(name= "id", nullable= false, columnDefinition= "INTEGER")
     private Long id;
+    @Id
     @Column(name= "link", nullable= false, columnDefinition= "TEXT")
     private String link;
 
