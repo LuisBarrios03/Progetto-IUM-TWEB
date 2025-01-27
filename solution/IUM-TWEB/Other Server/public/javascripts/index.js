@@ -1,11 +1,24 @@
-function init(){
-    fetch('/api/data')
+
+function fetchDataRotten(){
+    fetch('/api/dataRotten')
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                document.getElementById('data').innerText = JSON.stringify(data.data, null, 2);
+                document.getElementById('dataRotten').innerText = JSON.stringify(data.data, null, 2);
             } else {
-                document.getElementById('data').innerText = 'Errore nel recupero dei dati';
+                document.getElementById('dataRotten').innerText = 'Errore nel recupero dei dati';
+            }
+        })
+        .catch(err => console.error('Errore:', err));
+}
+function fetchDataOscarAwards(){
+    fetch('/api/dataOscar')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('dataOscars').innerText = JSON.stringify(data.data, null, 2);
+            } else {
+                document.getElementById('dataOscars').innerText = 'Errore nel recupero dei dati';
             }
         })
         .catch(err => console.error('Errore:', err));
