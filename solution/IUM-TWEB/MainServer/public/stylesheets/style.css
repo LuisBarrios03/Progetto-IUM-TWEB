@@ -36,7 +36,7 @@ a {
   background-color: #c0c0c0; /* Grigio leggermente più scuro */
   color: black; /* Mantiene il testo bianco */
 }
-/* Aggiungi effetto hover per le voci del menù */
+/* Aggiungi effetto hover per le voci del menù ...FORSE DA TOGLIERE*/
 .nav-item:hover {
   background-color: #526492; /* Blu chiaro */
   border-radius: 5px; /* Rende i bordi arrotondati */
@@ -46,3 +46,10 @@ a {
   text-decoration: underline; /* Aggiunge la sottolineatura */
 }
 
+/* per il footer*/
+.fab {
+  font-size: 30px; /* Puoi cambiare la dimensione  */
+}
+.fab:hover {
+  color: #526492; /* Colore che appare al passaggio del mouse sopra le icone dei social */
+}
