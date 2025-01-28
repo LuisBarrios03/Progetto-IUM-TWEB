@@ -6,3 +6,43 @@ body {
 a {
   color: #00B7FF;
 }
+
+/*AGGIUNTO DA IRE PER LA NAVBAR*/
+/* Colore blu scuro della navbar */
+.bg-dark-blue {
+  background-color: #051233 !important; /* Colore blu scuro */
+}
+
+/* Colore blu chiaro per le voci di menu */
+.text-light-blue {
+  color: #ffffff !important; /* Colore blu chiaro */
+}
+
+/* Modifica il logo: altezza massima e margine */
+.logo {
+  height: 50px; /* Altezza del logo */
+  margin-right: 10px; /* Spazio tra logo e menu */
+}
+
+/* Stile personalizzato per il bottone Accedi */
+.btn-light-gray {
+  background-color: #d3d3d3; /* Grigio chiaro */
+  color: black; /* Testo bianco */
+  border: none; /* Rimuove il bordo */
+}
+
+/* Cambia colore al passaggio del mouse */
+.btn-light-gray:hover {
+  background-color: #c0c0c0; /* Grigio leggermente più scuro */
+  color: black; /* Mantiene il testo bianco */
+}
+/* Aggiungi effetto hover per le voci del menù */
+.nav-item:hover {
+  background-color: #526492; /* Blu chiaro */
+  border-radius: 5px; /* Rende i bordi arrotondati */
+}
+/* aggiungi la sottolineatura al passaggio del mouse (testo) */
+.nav-link:hover {
+  text-decoration: underline; /* Aggiunge la sottolineatura */
+}
+
