@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Pages/film.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/public/stylesheets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Layouts/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Layouts/layout.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Partials/footer.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Partials/footer.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Partials/navbar.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Partials/navbar.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +44,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "branchIrene-Israa",
-    "last_opened_file_path": "C:/Users/irene/Desktop/Progetto-IUM-TWEB/solution/IUM-TWEB/MainServer/views/Partials",
+    "last_opened_file_path": "C:/Users/irene/Desktop/Progetto-IUM-TWEB/solution/IUM-TWEB/MainServer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +57,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\irene\Desktop\Progetto-IUM-TWEB\solution\IUM-TWEB\MainServer\views\Pages" />
       <recent name="C:\Users\irene\Desktop\Progetto-IUM-TWEB\solution\IUM-TWEB\MainServer\views\Partials" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -68,14 +66,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="www" type="NodeJSConfigurationType" path-to-node="$APPLICATION_CONFIG_DIR$/node/versions/20.15.0/node" nameIsGenerated="true" path-to-js-file="www" working-dir="$PROJECT_DIR$/solution/IUM-TWEB/Other Server/bin">
+    <configuration name="www" type="NodeJSConfigurationType" path-to-node="node" nameIsGenerated="true" path-to-js-file="www" working-dir="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Pages">
       <method v="2" />
     </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
       </set>
     </attachedChunks>
   </component>
@@ -95,6 +93,7 @@
       <workItem from="1737992381324" duration="70000" />
       <workItem from="1738078462522" duration="427000" />
       <workItem from="1738078907152" duration="45000" />
+      <workItem from="1738157554090" duration="1803000" />
     </task>
     <servers />
   </component>
