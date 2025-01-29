@@ -23,19 +23,19 @@ a {
   height: 50px; /* Altezza del logo */
   margin-right: 10px; /* Spazio tra logo e menu */
 }
-
-/* Stile personalizzato per il bottone Accedi */
+/*
+!* Stile personalizzato per il bottone Accedi *!
 .btn-light-gray {
-  background-color: #d3d3d3; /* Grigio chiaro */
-  color: black; /* Testo bianco */
-  border: none; /* Rimuove il bordo */
+  background-color: #d3d3d3; !* Grigio chiaro *!
+  color: black; !* Testo bianco *!
+  border: none; !* Rimuove il bordo *!
 }
 
-/* Cambia colore al passaggio del mouse */
+!* Cambia colore al passaggio del mouse *!
 .btn-light-gray:hover {
-  background-color: #c0c0c0; /* Grigio leggermente più scuro */
-  color: black; /* Mantiene il testo bianco */
-}
+  background-color: #c0c0c0; !* Grigio leggermente più scuro *!
+  color: black; !* Mantiene il testo bianco *!
+}*/
 /* Aggiungi effetto hover per le voci del menù ...FORSE DA TOGLIERE*/
 .nav-item:hover {
   background-color: #526492; /* Blu chiaro */
@@ -52,4 +52,17 @@ a {
 }
 .fab:hover {
   color: #526492; /* Colore che appare al passaggio del mouse sopra le icone dei social */
+}
+.search{
+
+  margin-bottom: 1.5rem !important;
+  margin-top: 1.5rem !important;
+}
+.filter{
+  width: 20px;
+  height: 20px;
+}
+.img-search{
+  width: 20px;
+  height: 20px;
 }
