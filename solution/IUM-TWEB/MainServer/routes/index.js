@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('Pages/HomePage.hbs', { title: 'Express' });
 });
 
+/* GET film. */
+router.get('/film', function(req, res, next) {
+  res.render('Pages/film.hbs', { title: 'Express' });
+});
+
 module.exports = router;
