@@ -1,26 +1,91 @@
 <div class="container mt-4">
-    <h1 class="mb-4">Film</h1>
+    <h1 class="text-start">Film</h1>
 
-    <div class="row">
-        <div class="col-md-4">
-            <img src="film.jpg" class="img-fluid" alt="Locandina del film">
+    <!-- Testo introduttivo -->
+    <p class="lead">Cerca il film di tuo interesse.</p>
+
+    <!-- Barra filtri -->
+    <div class="row my-3">
+        <div class="col-md">
+            <input type="text" class="form-control" placeholder="Titolo">
         </div>
-        <div class="col-md-8">
-            <h2>Titolo del Film</h2>
-            <p><strong>Durata:</strong> 120 min</p>
-            <p><strong>Valutazione:</strong> ⭐⭐⭐⭐☆</p>
-            <p><strong>Descrizione:</strong> Breve descrizione del film che riassume la trama.</p>
+        <div class="col-md">
+            <!-- <select class="form-control">
+                <option selected>Genere</option>
+                <option>Azione</option>
+                <option>Commedia</option>
+                <option>Dramma</option>
+                <option>Horror</option>
+            </select> -->
+            <input type="text" class="form-control" placeholder="Genere">
+        </div>
+        <div class="col-md">
+            <input type="number" class="form-control" placeholder="Durata (min)">
+        </div>
+        <div class="col-md">
+            <input type="number" class="form-control" placeholder="Valutazione (1-10)" min="1" max="10">
+        </div>
+        <div class="col-md">
+            <input type="number" class="form-control" placeholder="Anno di produzione">
+        </div>
+        <div class="col-md-auto">
+            <button class="btn btn-primary">Filtra</button>
         </div>
     </div>
 
-    <hr>
-
-    <div class="row">
-        <div class="col-md-12">
-            <p><strong>Attori:</strong> Nome Attore 1, Nome Attore 2, Nome Attore 3</p>
-            <p><strong>Lingua:</strong> Italiano, Inglese</p>
-            <p><strong>Crew:</strong> Nome Regista, Nome Produttore</p>
-            <p><strong>Descrizione Crew:</strong> Breve descrizione del team di produzione e della loro esperienza.</p>
+    <!-- Griglia film -->
+    <div class="row row-cols-5" id="film-container">
+        <!-- 5 righe di 5 film -->
+        <div class="col mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" class="card-img-top" alt="Poster">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Titolo Film</h5>
+                    <p class="card-text">⭐ 8.5</p>
+                </div>
+            </div>
         </div>
+        <div class="col mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" class="card-img-top" alt="Poster">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Titolo Film</h5>
+                    <p class="card-text">⭐ 8.5</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" class="card-img-top" alt="Poster">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Titolo Film</h5>
+                    <p class="card-text">⭐ 7.5</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" class="card-img-top" alt="Poster">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Titolo Film</h5>
+                    <p class="card-text">⭐ 6.5</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" class="card-img-top" alt="Poster">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Titolo Film</h5>
+                    <p class="card-text">⭐ 4.5</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Carica altro -->
+    <div class="text-center my-4">
+        <button class="btn btn-secondary" id="load-more">Carica Altro</button>
     </div>
 </div>
