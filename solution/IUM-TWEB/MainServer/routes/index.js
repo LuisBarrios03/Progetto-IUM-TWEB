@@ -17,4 +17,8 @@ router.get('/Oscars', function(req, res, next) {
   res.render('Pages/Oscars.hbs', { title: 'Oscars' });
 });
 
+router.get('/Login', function(req, res, next) {
+  res.render('Pages/Login.hbs', { title: 'Login' });
+});
+
 module.exports = router;
