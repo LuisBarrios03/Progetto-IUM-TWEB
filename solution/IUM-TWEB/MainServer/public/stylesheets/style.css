@@ -80,3 +80,8 @@ a {
   display: none; /* I filtri sono inizialmente nascosti */
   margin-top: 15px;
 }
+
+/*per il filtra di film*/
+.btn btn-primary{
+  background-color: #526492 !important;
+}
