@@ -10,7 +10,6 @@ import com.example.javaserver.releases.Releases;
 import com.example.javaserver.studios.Studios;
 import com.example.javaserver.themes.Themes;
 import jakarta.persistence.*;
-
 import java.util.List;
 
 
@@ -32,7 +31,7 @@ public class Movies {
     @Column(name = "minute", nullable = true, columnDefinition = "INTEGER")
     private Long minute;
     @Column(name = "rating", nullable = true, columnDefinition = "INTEGER")
-    private Float rating;
+    private Double rating;
 
 //collegamento con le altre tabelle
     @OneToMany(mappedBy = "movie")
@@ -61,7 +60,7 @@ public class Movies {
     //constructor
     public Movies() {}
 
-    public Movies(Long id, String name, Integer date, String tagline, String description, Long minute, Float rating) {
+    public Movies(Long id, String name, Integer date, String tagline, String description, Long minute, Double rating) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -90,6 +89,78 @@ public class Movies {
     public Long getMinute() {return minute;}
     public void setMinute(Long minute) {this.minute = minute;}
 
-    public Float getRating() {return rating;}
-    public void setRating(Float rating) {this.rating = rating;}
+    public Double getRating() {return rating;}
+    public void setRating(Double rating) {this.rating = rating;}
+
+    public List<Languages> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(List<Languages> languages) {
+        this.languages = languages;
+    }
+
+    public Posters getPosters() {
+        return posters;
+    }
+
+    public void setPosters(Posters posters) {
+        this.posters = posters;
+    }
+
+    public List<Actors> getActors() {
+        return actors;
+    }
+
+    public void setActors(List<Actors> actors) {
+        this.actors = actors;
+    }
+
+    public List<Countries> getCountries() {
+        return countries;
+    }
+
+    public void setCountries(List<Countries> countries) {
+        this.countries = countries;
+    }
+
+    public List<Crews> getCrews() {
+        return crews;
+    }
+
+    public void setCrews(List<Crews> crews) {
+        this.crews = crews;
+    }
+
+    public List<Genres> getGenre() {
+        return genre;
+    }
+
+    public void setGenre(List<Genres> genre) {
+        this.genre = genre;
+    }
+
+    public List<Studios> getStudio() {
+        return studio;
+    }
+
+    public void setStudio(List<Studios> studio) {
+        this.studio = studio;
+    }
+
+    public List<Releases> getRelease() {
+        return release;
+    }
+
+    public void setRelease(List<Releases> release) {
+        this.release = release;
+    }
+
+    public List<Themes> getTheme() {
+        return theme;
+    }
+
+    public void setTheme(List<Themes> theme) {
+        this.theme = theme;
+    }
 }

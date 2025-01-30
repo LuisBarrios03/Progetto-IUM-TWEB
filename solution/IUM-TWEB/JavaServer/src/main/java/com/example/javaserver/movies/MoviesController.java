@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -50,6 +51,21 @@ public class MoviesController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.ok(movie);
+    }
+
+    @GetMapping("/recent")
+    public List<MoviesDTO> getRecentMovies() {
+        List<Movies> movies = moviesService.moviesByTop5();
+
+        return movies.stream().map(movie -> new MoviesDTO(
+                movie.getId(),
+                movie.getName(),
+                movie.getTagline(),
+                movie.getDescription(),
+                movie.getMinute(),
+                movie.getRating(),
+                movie.getPosters() != null ? movie.getPosters().getLink() : "default.jpg"
+        )).collect(Collectors.toList());
     }
 
 }
