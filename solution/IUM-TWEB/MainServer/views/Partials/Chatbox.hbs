@@ -1,19 +1,40 @@
-<div class="container d-flex flex-column rounded" style="border: 1px solid #051233">
-    <div class="p-2" style="border-bottom: 1px solid darkgrey">
+<div class="container d-flex flex-column rounded" style="border: 1px solid #051233; height: 500px;">
+    <!-- Intestazione della chat -->
+    <div class="p-2" style="border-bottom: 1px solid darkgrey;">
         <h1>Nome dalla chat</h1>
     </div>
 
-    <div class="container p-3"><!--corpo della chat-->
-        <div class="container d-flex flex-row">
-            <div class="col-1" style="border: solid palevioletred">
-                <img src="/public/img/account.png" alt="immagine profilo">
+    <!-- Corpo della chat -->
+    <div class="flex-grow-1 p-3 d-flex flex-column justify-content-between">
+        <div class="d-flex flex-row mb-2">
+            <div class="col-1" style="border: solid palevioletred;">
+                <img src="/public/img/account.png" alt="immagine profilo" style="width: 100%; height: auto;">
             </div>
-
-            <div class="col-11 d-flex flex-column" style="border: solid turquoise">
+            <div class="col-11 d-flex flex-column" style="border: solid turquoise;">
                 <h3>Nome utente</h3>
-                <text>sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento sample del testo del commento </text>
+                <p>
+                    Sample del testo del commento sample del testo del commento sample del testo del commento
+                    sample del testo del commento sample del testo del commento sample del testo del commento.
+                </p>
+            </div>
+        </div>
+
+        <!-- Commento utente-->
+        <div class="d-flex flex-row">
+            <div class="col-1" style="border: solid palevioletred;">
+                <img src="/public/img/account.png" alt="immagine profilo" style="width: 100%; height: auto;">
+            </div>
+            <div class="col-11">
+                <h3>Nome utente</h3>
+                <div class="d-flex flex-row">
+                    <div class="flex-grow-1 pe-2">
+                        <textarea class="form-control" placeholder="Inserisci commento" rows="2" id="comment" name="text"></textarea>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" style="height: 100%;">Invia</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </div>
