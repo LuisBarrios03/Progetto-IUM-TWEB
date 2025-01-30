@@ -4,8 +4,6 @@ const axios = require('axios');
 /* GET home page. */
 router.get('/', async function (req, res, next) {
   res.render('Pages/HomePage.hbs', {title: 'Awards Explorer'});
-
-
 });
 
 /* GET film. */

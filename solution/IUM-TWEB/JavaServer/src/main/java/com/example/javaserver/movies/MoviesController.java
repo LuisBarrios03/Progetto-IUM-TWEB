@@ -1,9 +1,15 @@
 package com.example.javaserver.movies;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -53,6 +59,13 @@ public class MoviesController {
         return ResponseEntity.ok(movie);
     }
 
+
+
+
+
+
+
+
     @GetMapping("/recent")
     public List<MoviesDTO> getRecentMovies() {
         List<Movies> movies = moviesService.moviesByTop5();
@@ -67,5 +80,12 @@ public class MoviesController {
                 movie.getPosters() != null ? movie.getPosters().getLink() : "default.jpg"
         )).collect(Collectors.toList());
     }
+
+   /* @GetMapping("/TopRate")
+    public Page<Movies> getTopRatedMovies(Pageable pageable) {
+        Pageable topMoviesPage = PageRequest.of(0, 3    , Sort.by(Sort.Order.desc("rating"))); // Paginazione personalizzata
+        return moviesService.findTopRatedMovies( topMoviesPage); // Ritorna la pagina
+    }
+*/
 
 }

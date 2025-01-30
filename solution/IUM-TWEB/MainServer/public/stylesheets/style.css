@@ -85,3 +85,14 @@ a {
 .btn btn-primary{
   background-color: #526492 !important;
 }
+.carousel-inner img {
+  height: 650px;
+  width: 100%;
+  object-fit: cover; /* Mantiene le proporzioni e riempie l'area */
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* Sfondo nero con opacità 50% */
+  padding: 10px; /* Aggiunge un po' di spazio interno */
+  border-radius: 5px; /* Arrotonda leggermente gli angoli */
+}
+

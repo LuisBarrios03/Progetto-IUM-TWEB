@@ -30,7 +30,7 @@ public class Movies {
     private String description;
     @Column(name = "minute", nullable = true, columnDefinition = "INTEGER")
     private Long minute;
-    @Column(name = "rating", nullable = true, columnDefinition = "INTEGER")
+    @Column(name = "rating", nullable = true, columnDefinition = "REAL")
     private Double rating;
 
 //collegamento con le altre tabelle
