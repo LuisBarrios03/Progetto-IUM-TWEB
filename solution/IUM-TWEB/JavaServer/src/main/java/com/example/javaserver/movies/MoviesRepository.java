@@ -18,4 +18,6 @@ public interface MoviesRepository extends JpaRepository<Movies, Long> {
     //trova i film per rating
     @Query("select m from Movies m where m.rating = :rating") List<Movies> moviesByRating(Float rating);
 
+    @Query("SELECT m FROM Movies m ORDER BY m.date DESC LIMIT 5")
+    List<Movies> findTop5RecentMovies();
 }

@@ -24,4 +24,5 @@ public class MoviesService {
     public List<Movies> moviesByDate(int date) {
         return moviesRepository.moviesByDate(date);
     }
+    public List<Movies> moviesByTop5() {return moviesRepository.findTop5RecentMovies();}
 }
