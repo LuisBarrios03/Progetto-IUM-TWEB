@@ -7,8 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET film. */
-router.get('/film', function(req, res, next) {
-  res.render('Pages/film.hbs', { title: 'Express' });
+router.get('/Film', function(req, res, next) {
+  res.render('Pages/Film.hbs', { title: 'Express' });
+});
+router.get('/Oscars', function(req, res, next) {
+  res.render('Pages/Oscars.hbs', { title: 'Express' });
 });
 
 module.exports = router;
