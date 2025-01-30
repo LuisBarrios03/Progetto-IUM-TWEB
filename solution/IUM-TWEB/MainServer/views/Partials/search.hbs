@@ -1,7 +1,42 @@
-<div class="container mt-4 search">
-    <div class="input-group search-bar mx-auto">
+<div class="container mt-4 search-container">
+    <!-- Barra di ricerca -->
+    <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Cerca...">
-        <button class="btn btn-outline-secondary" type="button"><img class="filter" src="img/Filtro.png"></button>
-        <button class="btn btn-outline-secondary" type="button"><img class ="img-search" src="img/Search.png"></button>
+        <button class="btn btn-outline-secondary" type="button">
+            <img class="filter" src="img/Filtro.png" alt="Filtro" onclick="toggleFilters()">
+        </button>
+        <button class="btn btn-outline-secondary" type="button" >
+            <img class="img-search" src="img/Search.png" alt="Cerca">
+        </button>
+    </div>
+
+    <!-- Barra filtri (inizialmente nascosta) -->
+    <div class="filters" id="filters">
+        <div class="row g-2">
+            <div class="col-md">
+                <input type="text" class="form-control" placeholder="Titolo">
+            </div>
+            <div class="col-md">
+                <select class="form-control">
+                    <option selected>Genere</option>
+                    <option>Azione</option>
+                    <option>Commedia</option>
+                    <option>Dramma</option>
+                    <option>Horror</option>
+                </select>
+            </div>
+            <div class="col-md">
+                <input type="number" class="form-control" placeholder="Durata (min)">
+            </div>
+            <div class="col-md">
+                <input type="number" class="form-control" placeholder="Valutazione (1-10)" min="1" max="10">
+            </div>
+            <div class="col-md">
+                <input type="number" class="form-control" placeholder="Anno di produzione">
+            </div>
+            <div class="col-md-auto">
+                <button class="btn btn-primary">Filtra</button>
+            </div>
+        </div>
     </div>
 </div>
