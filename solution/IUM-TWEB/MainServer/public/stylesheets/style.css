@@ -85,3 +85,23 @@ a {
 .btn btn-primary{
   background-color: #526492 !important;
 }
+
+/*per il form di registrazione*/
+.login-bg{
+  background: #051233; /*030d28*/
+  background: linear-gradient(180deg, #030d28 0%, #212529 100%);
+}
+
+.login{
+  padding:20px;
+  background-color: #F5F5F5;
+  margin: 5%;
+  width: 40% !important;
+  border-radius: 10px;
+}
+.myForm{
+  padding: 5%;
+}
+.centerText{
+  text-align: center;
+}
