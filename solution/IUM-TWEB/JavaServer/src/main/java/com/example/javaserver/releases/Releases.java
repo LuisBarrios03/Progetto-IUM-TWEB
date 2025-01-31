@@ -3,7 +3,7 @@ package com.example.javaserver.releases;
 import com.example.javaserver.movies.Movies;
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name= "releases")
@@ -45,8 +45,8 @@ public class Releases {
     public String getCountry() {return country;}
     public void setCountry(String country) {this.country = country;}
 
-    public Date getDate() {return date;}
-    public void setDate(Date date) {this.date = date;}
+    public Date getReleaseDate() {return date;}
+    public void setReleaseDate(Date date) {this.date = date;}
 
     public String getType() {return type;}
     public void setType(String type) {this.type = type;}

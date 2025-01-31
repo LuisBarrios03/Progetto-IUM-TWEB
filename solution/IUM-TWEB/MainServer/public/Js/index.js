@@ -5,7 +5,7 @@ function toggleFilters() {
 
 async function loadFilmsWithCarousel() {
     try {
-        const response = await axios.get('http://localhost:8080/movies/recent');
+        const response = await axios.get('http://localhost:8080/movies/latest-releases');
         const carouselInner = document.getElementById("carousel-inner");
         const carouselIndicators = document.getElementById("carousel-indicators");
 
@@ -15,8 +15,9 @@ async function loadFilmsWithCarousel() {
 
         response.data.forEach((movie, index) => {
             let isActive = index === 0 ? "active" : "";
-
-            // Creazione della slide
+            if(movie.posterUrl == null){
+                movie.posterUrl = "https://a.ltrbxd.com/resized/film-poster/6/4/1/9/6/1/641961-bullet-train-0-230-0-345-crop.jpg?v=9245faa1ba";
+            }            // Creazione della slide
             let item = `
                 <div class="carousel-item ${isActive}">
                     <img src="${movie.posterUrl}" class="d-block w-100" style="height: 450px; object-fit: cover;" alt="${movie.name}">
@@ -40,31 +41,34 @@ async function loadFilmsWithCarousel() {
 }
 
 async function loadMovieDetails() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const movieId = urlParams.get("id");
-
     try {
-        const response = await axios.get(`http://localhost:8080/movies/TopRate`);
-        const movie = response.data;
+        const response = await axios.get("http://localhost:8080/movies/TopRate");
+        const movies = response.data;
 
-        let stars = generateStars(movie.rating);
-
-        let detailsHTML = `
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="${movie.posterUrl}" class="img-fluid rounded shadow" alt="${movie.name}">
-                        </div>
-                        <div class="col-md-8">
-                            <h2>${movie.name}</h2>
+        let cardsHTML = "";
+        movies.forEach(movie => {
+            let posterUrl = (movie.posters.link != null) ? movie.posters.link : "https://a.ltrbxd.com/resized/film-poster/6/4/1/9/6/1/641961-bullet-train-0-230-0-345-crop.jpg?v=9245faa1ba";
+            let rating = movie.rating !== null ? movie.rating : 0;
+            let stars = generateStars(rating);
+            cardsHTML += `
+                <div class="col-md-4">
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                        <img src="${posterUrl}" class="card-img-top" alt="${movie.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${movie.name}</h5>
                             <p>${stars}</p>
-                            <p>${movie.description}</p>
-                            <a href="index.html" class="btn btn-secondary">Torna indietro</a>
+                            <a href="movie-details.html?id=${movie.id}" class="btn btn-primary">Dettagli</a>
                         </div>
-                    </div>`;
+                    </div>
+                </div>`;
+        });
 
-        document.getElementById("movie-details").innerHTML = detailsHTML;
+        document.getElementById("movies-container").innerHTML = `<div class="row">${cardsHTML}</div>`;
+
     } catch (error) {
-        console.error("Errore nel recupero del film:", error);
+        console.error("Errore nel recupero dei film:", error);
+        // Mostra un messaggio di errore all'utente
+        document.getElementById("movies-container").innerHTML = `<div class="alert alert-danger" role="alert">Errore nel caricamento dei film. Riprova più tardi.</div>`;
     }
 }
 
@@ -79,11 +83,9 @@ function generateStars(rating) {
     }
     return stars;
 }
-
-//document.addEventListener("DOMContentLoaded", loadMovieDetails);
-
+document.addEventListener("DOMContentLoaded", loadMovieDetails);
 function init() {
     loadFilmsWithCarousel();
-    //  loadMovieDetails();
+    loadMovieDetails();
 }
 
