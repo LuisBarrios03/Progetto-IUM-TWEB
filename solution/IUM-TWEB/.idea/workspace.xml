@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf05e899-abf1-439b-85bd-0fc6f4caccf6" name="Changes" comment="" />
+    <list default="true" id="bf05e899-abf1-439b-85bd-0fc6f4caccf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MainServer/views/Partials/Chatbox.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,26 +13,38 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
-    "state": "OPENED",
-    "assignee": {
-      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
-      "username": "st224596",
-      "fullname": "Barrios Luna Victoria Luis Andrè"
+    "state": "OPEN",
+    "assignee": "iursraa"
+  }
+}]]></component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;st224596&quot;,
+      &quot;fullname&quot;: &quot;Barrios Luna Victoria Luis Andrè&quot;
     }
   }
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab2.educ.di.unito.it/st224596/progetto-ium-tweb.git&quot;,
+    &quot;second&quot;: &quot;1bacf536-1bfd-4a0c-9eba-22cdc627c62a&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "first": "https://gitlab2.educ.di.unito.it/st224596/progetto-ium-tweb.git",
-    "second": "1bacf536-1bfd-4a0c-9eba-22cdc627c62a"
+    "url": "https://github.com/LuisBarrios03/Progetto-IUM-TWEB.git",
+    "accountId": "09c8b8f0-8506-4da8-8349-2c63ccaaf87d"
   }
 }]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2rFm1FtEbVTOvmgOcy6AX9GhIiF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,7 +54,8 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "branch-israa",
+    "last_opened_file_path": "C:/Users/hp.LAPTOP-54KFQGSR/Desktop/PROGETTI/solution/IUM-TWEB/MainServer",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -47,7 +63,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
       </set>
     </attachedChunks>
   </component>
@@ -60,6 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736162981744</updated>
       <workItem from="1736162983355" duration="152000" />
+      <workItem from="1738248962972" duration="8000" />
     </task>
     <servers />
   </component>
