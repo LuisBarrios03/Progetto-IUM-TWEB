@@ -86,7 +86,7 @@ a {
   background-color: #526492 !important;
 }
 .carousel-inner img {
-  height: 750px;
+  height: 100vh;
   width: 100%;
   object-fit: cover; /* Mantiene le proporzioni e riempie l'area */
 }
@@ -98,4 +98,8 @@ a {
 
 .btn{
   color: #526492;
+}
+
+h2{
+  padding: 15px;
 }

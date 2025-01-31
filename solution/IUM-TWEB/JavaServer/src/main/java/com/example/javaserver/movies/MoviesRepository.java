@@ -28,7 +28,7 @@ public interface MoviesRepository extends JpaRepository<Movies, Long> {
 
     @Query("SELECT m FROM Movies m JOIN m.release r WHERE  r.date <= :today AND r.date IS NOT NULL ORDER BY r.date DESC")
     List<Movies> findLatestReleasedMovies(@Param("today") LocalDate today , Pageable pageable);
-    @Query("SELECT m FROM Movies m ORDER BY m.rating DESC")
+    @Query("SELECT m FROM Movies m WHERE m.rating IS NOT NULL AND  m.date = 2024  AND  m.rating<=5 ORDER BY m.rating DESC")
     List<Movies> findTopRatedMovies(Pageable pageable);
 
 }
