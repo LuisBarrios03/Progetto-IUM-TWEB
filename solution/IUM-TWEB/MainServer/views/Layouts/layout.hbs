@@ -20,6 +20,26 @@
 
 
   {{> footer}}  <!-- Including the Footer component -->
+      <script>
+          // Funzione per caricare altre righe di film
+          document.getElementById("load-more").addEventListener("click", function() {
+              let filmContainer = document.getElementById("film-container");
+              for (let i = 0; i < 5; i++) {
+                  let newFilm = document.createElement("div");
+                  newFilm.classList.add("col", "mb-4");
+                  newFilm.innerHTML = `
+                    <div class="card">
+                        <img src="https://via.placeholder.com/200x300" class="card-img-top" alt="Poster">
+                        <div class="card-body text-center">
+                            <a href="/FilmScheda">Titolo Film</a>
+                            <p class="card-text">⭐ 8.5</p>
+                        </div>
+                    </div>
+                `;
+                  filmContainer.appendChild(newFilm);
+              }
+          });
+      </script>
       <script src="Js/index.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
