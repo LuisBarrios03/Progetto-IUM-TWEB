@@ -1,26 +1,32 @@
-<div class="container mt-4">
-    <h1 class="mb-4">Film</h1>
-
-    <div class="row">
-        <div class="col-md-4">
-            <img src="film.jpg" class="img-fluid" alt="Locandina del film">
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h1 id="filmTitle">Titolo del Film</h1>
         </div>
-        <div class="col-md-8">
-            <h2>Titolo del Film</h2>
-            <p><strong>Durata:</strong> 120 min</p>
-            <p><strong>Valutazione:</strong> ⭐⭐⭐⭐☆</p>
-            <p><strong>Descrizione:</strong> Breve descrizione del film che riassume la trama.</p>
+        <div class="card-body row">
+            <!-- Poster -->
+            <div class="col-md-4">
+                <img id="filmPoster" src="" alt="Poster del film" class="img-fluid mb-3">
+            </div>
+            <!-- Dettagli del film -->
+            <div class="col-md-8">
+                <p><strong>Anno di uscita:</strong> <span id="filmRelease"></span></p>
+                <p><strong>Lingua:</strong> <span id="filmLanguage"></span></p>
+                <p><strong>Durata:</strong> <span id="filmDuration"></span></p>
+                <p><strong>Valutazione:</strong> <span id="filmRating"></span></p>
+                <p><strong>Genere:</strong> <span id="FilmGenre"></span></p>
+                <p><strong>Studio di Produzione:</strong> <span id="filmStudio"></span></p>
+                <p><strong>Descrizione:</strong> <span id="filmDescription"></span></p>
+            </div>
         </div>
-    </div>
 
-    <hr>
-
-    <div class="row">
-        <div class="col-md-12">
-            <p><strong>Attori:</strong> Nome Attore 1, Nome Attore 2, Nome Attore 3</p>
-            <p><strong>Lingua:</strong> Italiano, Inglese</p>
-            <p><strong>Crew:</strong> Nome Regista, Nome Produttore</p>
-            <p><strong>Descrizione Crew:</strong> Breve descrizione del team di produzione e della loro esperienza.</p>
+        <!-- Attori e Crew sotto il corpo principale -->
+        <div class="card-body">
+            <p><strong>Attori:</strong> <span id="filmActors"></span></p>
+            <p><strong>Crew:</strong> <span id="filmCrew"></span></p>
+            <p id="crewDescription"></p>
         </div>
     </div>
 </div>
+
+<script src="Js/index_FilmScheda.js"></script>

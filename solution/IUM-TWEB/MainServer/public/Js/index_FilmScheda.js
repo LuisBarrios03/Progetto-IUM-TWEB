@@ -1,0 +1,44 @@
+async function fetchFilmData() {
+    try {
+        const movieId = getMovieIdFromUrl();
+        if (!movieId) {
+            throw new Error('ID del film non trovato nell\'URL.');
+        }
+
+        const response = await axios.get(`http://localhost:8080/movies/id/${movieId}`);
+        const film = response.data[0];
+
+        document.getElementById("filmRelease").innerText = film.date;
+        document.getElementById('filmTitle').innerText = film.name;
+        document.getElementById('filmPoster').src = film.posters.link;
+        document.getElementById('filmDuration').innerText = film.minute + " minuti";
+        document.getElementById('filmRating').innerText = film.rating.toFixed(2);
+        document.getElementById('filmDescription').innerText = film.description;
+
+        const genres = film.genre.map(genre => `${genre.genre}`).join(', ');
+        document.getElementById('FilmGenre').innerText = genres;
+
+        const actors = film.actors.map(actor => `${actor.name} as ${actor.role}`).join(', ');
+        document.getElementById('filmActors').innerText = actors;
+
+        const language = film.languages.map(language => `${language.language}`).join(', ');
+        document.getElementById('filmLanguage').innerText = language;
+
+        const crews = film.crews.map(crew => `${crew.name} as ${crew.role}`).join(', ');
+        document.getElementById('crewDescription').innerText = crews;
+
+        const studios = film.studio.map(studio => `${studio.studio}`).join(', ');
+        document.getElementById('filmStudio').innerText = studios;
+    } catch (error) {
+        console.error('Errore nel caricamento dei dati del film:', error);
+    }
+}
+
+function getMovieIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id'); // Restituisce l'ID dalla query string
+}
+
+function init() {
+    fetchFilmData();
+}
