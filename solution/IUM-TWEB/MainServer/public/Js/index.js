@@ -56,7 +56,8 @@ async function loadMovieDetails() {
                         <img src="${posterUrl}" class="card-img-top" alt="${movie.name}">
                         <div class="card-body">
                             <h5 class="card-title">${movie.name}</h5>
-                            <p>${stars}</p>
+                            <p>${stars} ${rating.toFixed(2)}</p>
+                           
                             <a href="movie-details.html?id=${movie.id}" class="btn btn-primary">Dettagli</a>
                         </div>
                     </div>
