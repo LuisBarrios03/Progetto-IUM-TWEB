@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/Releases")
+@RequestMapping("/releases")
 public class ReleasesController {
     @Autowired
     private ReleasesService releasesService;
@@ -42,5 +42,10 @@ public class ReleasesController {
         if (releases == null || releases.isEmpty()) { return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); }
         return ResponseEntity.ok(releases);
     }
+
+
+
+
+
 
 }
