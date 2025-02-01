@@ -1,5 +1,6 @@
 package com.example.javaserver.movies;
 
+import com.example.javaserver.genres.Genres;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -76,6 +77,24 @@ public class MoviesController {
         // Paginazione personalizzata
         final Pageable pageable = PageRequest.of(0,9);
         List<Map<String, Object>> movie = moviesService.findTopRatedMovies(pageable);
+        if (movie == null || movie.isEmpty()) {
+            // Se non ci sono risultati, restituisci un 404 (NOT FOUND)
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        // Se ci sono risultati, restituisci un 200 OK con i dati
+        return ResponseEntity.ok(movie);
+    }
+     @GetMapping("/search")
+    public ResponseEntity<List<Map<String, Object>>> searchMovies(
+            @RequestParam(required = false) String title,
+            @RequestParam(required = false) List<String> genres,
+            @RequestParam(required = false) Integer duration,
+            @RequestParam(required = false) Double rating,
+            @RequestParam(required = false) Integer year,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "9") int size
+    ) {
+        List<Map<String, Object>> movie = moviesService.searchMovies(title, genres, duration, rating, year, page, size);
         if (movie == null || movie.isEmpty()) {
             // Se non ci sono risultati, restituisci un 404 (NOT FOUND)
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
