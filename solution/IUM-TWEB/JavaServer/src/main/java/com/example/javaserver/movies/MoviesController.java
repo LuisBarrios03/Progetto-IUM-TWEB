@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -59,23 +60,22 @@ public class MoviesController {
 
 
     @GetMapping("/latest-releases")
-    public ResponseEntity<List<MoviesDTO>> getLatestReleasedMovies() {
+    public ResponseEntity <List<Map<String, Object>>> getLatestReleasedMovies() {
         LocalDate today = LocalDate.now();
-        final Pageable pageable = PageRequest.of(1,10   );
-        List<MoviesDTO> movie = moviesService.getFindLatestReleasedMovies(today,pageable);
+        final Pageable pageable = PageRequest.of(0,5);
+
+        List<Map<String, Object>> movie = moviesService.getFindLatestReleasedMovies(today,pageable);
         if (movie == null || movie.isEmpty()) {
-            // Se non ci sono risultati, restituisci un 404 (NOT FOUND)
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-        // Se ci sono risultati, restituisci un 200 OK con i dati
         return ResponseEntity.ok(movie);
     }
 
     @GetMapping("/TopRate")
-    public ResponseEntity<List<Movies>>getTopRatedMovies() {
+    public ResponseEntity<List<Map<String, Object>>>getTopRatedMovies() {
         // Paginazione personalizzata
-        final Pageable pageable = PageRequest.of(1,9);
-        List<Movies> movie = moviesService.findTopRatedMovies(pageable);
+        final Pageable pageable = PageRequest.of(0,9);
+        List<Map<String, Object>> movie = moviesService.findTopRatedMovies(pageable);
         if (movie == null || movie.isEmpty()) {
             // Se non ci sono risultati, restituisci un 404 (NOT FOUND)
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

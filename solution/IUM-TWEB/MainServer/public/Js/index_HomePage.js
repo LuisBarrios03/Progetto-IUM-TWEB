@@ -15,12 +15,12 @@ async function loadFilmsWithCarousel() {
 
         response.data.forEach((movie, index) => {
             let isActive = index === 0 ? "active" : "";
-            if(movie.posterUrl == null){
-                movie.posterUrl = "https://a.ltrbxd.com/resized/film-poster/6/4/1/9/6/1/641961-bullet-train-0-230-0-345-crop.jpg?v=9245faa1ba";
+            if(movie.posters == null){
+                movie.posters = "https://a.ltrbxd.com/resized/film-poster/6/4/1/9/6/1/641961-bullet-train-0-230-0-345-crop.jpg?v=9245faa1ba";
             }            // Creazione della slide
             let item = `
                 <div class="carousel-item ${isActive}">
-                    <img src="${movie.posterUrl}" class="d-block w-100" style="height: 450px; object-fit: cover;" alt="${movie.name}">
+                    <img src="${movie.posters}" class="d-block w-100" style="height: 450px; object-fit: cover;" alt="${movie.name}">
                     <div class="carousel-caption">
                         <h5>${movie.name}</h5>
                         <p>${movie.description}</p>
@@ -47,7 +47,7 @@ async function loadMovieDetails() {
         console.log(movies);
         let cardsHTML = "";
         movies.forEach(movie => {
-            let posterUrl = (movie.posters.link != null) ? movie.posters.link : "https://a.ltrbxd.com/resized/film-poster/6/4/1/9/6/1/641961-bullet-train-0-230-0-345-crop.jpg?v=9245faa1ba";
+            let posterUrl = (movie.link != null) ? movie.link : "https://a.ltrbxd.com/resized/film-poster/6/4/1/9/6/1/641961-bullet-train-0-230-0-345-crop.jpg?v=9245faa1ba";
             let rating = movie.rating !== null ? movie.rating : 0;
             let stars = generateStars(rating);
             cardsHTML += `
@@ -57,8 +57,7 @@ async function loadMovieDetails() {
                         <div class="card-body">
                             <h5 class="card-title">${movie.name}</h5>
                             <p>${stars} ${rating.toFixed(2)}</p>
-                           
-                            <a href="movie-details.html?id=${movie.id}" class="btn btn-primary">Dettagli</a>
+                            <a href="/FilmScheda?id=${movie.id}" class="btn btn-primary">Dettagli</a>
                         </div>
                     </div>
                 </div>`;

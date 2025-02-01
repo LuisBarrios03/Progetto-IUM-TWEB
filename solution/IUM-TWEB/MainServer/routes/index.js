@@ -19,4 +19,8 @@ router.get('/Login', function(req, res, next) {
   res.render('Pages/Login.hbs', { title: 'Login', showSearch: false });
 });
 
+router.get('/FilmScheda', function(req, res, next) {
+  res.render('Pages/FilmScheda.hbs', { title: 'Register', showSearch: false });
+})
+
 module.exports = router;
