@@ -1,44 +1,28 @@
 <div class="container card mt-2 pt-3 px-3 mb-5 d-flex flex-row">
 
-    <div class ="col-2"> <!--div per la immagine--->
-        <img src="img/locandina.jpg" class="card-img-top" alt="no image"> <!--immagine presa con una qyery tra mongo e postgress--->
+<!--<div class ="col-2"> &lt;!&ndash;div per la immagine-&ndash;&gt;-->
+<!--    <img src="img/locandina.jpg" class="card-img-top" alt="no image"> &lt;!&ndash;immagine presa con una qyery tra mongo e postgress-&ndash;&gt;-->
+<!--</div>-->
+
+    <div class="col-10" id="OscarsContainer"> <!---div per il testo--->
+        <div class="row mb-2"> <!-- riga --->
+            <div id="movieName" class ="col span-4">Nome del film</div>
+            <div id="movieYear" class ="col span-4">anno del film</div>
+            <div class ="col span-4">
+            </div>
+        </div>
+
+        <div class="row mb-2"> <!-- riga --->
+            <div id="nominato" class ="col span-4">Nominato</div>
+            <div id="nomeNom" class ="col span-4">nome del nominato</div>
+            <div id="vincitore" class ="col span-4">vincitore?</div>
+        </div>
+
+        <div class="row mb-2"> <!-- riga --->
+            <div id="annoNom" class ="col span-4">anno nomina</div>
+            <div id="nCer" class ="col span-4">numero di cerimonie totali</div>
+            <div class ="col span-4">
+            </div>
+        </div>
     </div>
-
-    <div class="col-10"> <!---div per il testo--->
-        <div class="row mb-2"> <!-- riga --->
-            <div class ="col span-4">
-                <text>Nome del film</text>
-            </div>
-            <div class ="col span-4">
-                <text>anno del film</text>
-            </div>
-            <div class ="col span-4">
-            </div>
-        </div>
-
-        <div class="row mb-2"> <!-- riga --->
-            <div class ="col span-4">
-                <text>Nominato</text>
-            </div>
-            <div class ="col span-4">
-                <text>nome del nominato</text>
-            </div>
-            <div class ="col span-4">
-                <text>vincitore?</text>
-            </div>
-        </div>
-
-        <div class="row mb-2"> <!-- riga --->
-            <div class ="col span-4">
-                <text>anno nomina</text>
-            </div>
-            <div class ="col span-4">
-                <text>numero di cerimonie totali</text>
-            </div>
-            <div class ="col span-4">
-            </div>
-        </div>
-
-    </div>
-
 </div>
