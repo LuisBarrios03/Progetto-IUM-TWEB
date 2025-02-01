@@ -1,11 +1,14 @@
 package com.example.javaserver.movies;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @RestController
@@ -53,19 +56,32 @@ public class MoviesController {
         return ResponseEntity.ok(movie);
     }
 
-    @GetMapping("/recent")
-    public List<MoviesDTO> getRecentMovies() {
-        List<Movies> movies = moviesService.moviesByTop5();
 
-        return movies.stream().map(movie -> new MoviesDTO(
-                movie.getId(),
-                movie.getName(),
-                movie.getTagline(),
-                movie.getDescription(),
-                movie.getMinute(),
-                movie.getRating(),
-                movie.getPosters() != null ? movie.getPosters().getLink() : "default.jpg"
-        )).collect(Collectors.toList());
+
+    @GetMapping("/latest-releases")
+    public ResponseEntity<List<MoviesDTO>> getLatestReleasedMovies() {
+        LocalDate today = LocalDate.now();
+        final Pageable pageable = PageRequest.of(1,10   );
+        List<MoviesDTO> movie = moviesService.getFindLatestReleasedMovies(today,pageable);
+        if (movie == null || movie.isEmpty()) {
+            // Se non ci sono risultati, restituisci un 404 (NOT FOUND)
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        // Se ci sono risultati, restituisci un 200 OK con i dati
+        return ResponseEntity.ok(movie);
+    }
+
+    @GetMapping("/TopRate")
+    public ResponseEntity<List<Movies>>getTopRatedMovies() {
+        // Paginazione personalizzata
+        final Pageable pageable = PageRequest.of(1,9);
+        List<Movies> movie = moviesService.findTopRatedMovies(pageable);
+        if (movie == null || movie.isEmpty()) {
+            // Se non ci sono risultati, restituisci un 404 (NOT FOUND)
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        // Se ci sono risultati, restituisci un 200 OK con i dati
+        return ResponseEntity.ok(movie);
     }
 
 }

@@ -1,5 +1,7 @@
 package com.example.javaserver.movies;
 
+import java.util.Date;
+
 public class MoviesDTO {
 
     private Long id;
@@ -9,17 +11,20 @@ public class MoviesDTO {
     private Long minute;
     private Double rating;
     private String posterUrl;
+    private Date releaseDate;
 
     public MoviesDTO(){}
 
-    public MoviesDTO(Long id, String name, String tagline, String description, Long minute, Double rating, String posterUrl) {
+    public MoviesDTO(Long id, String name, String tagline, String description, Long minute, Double rating, String posterUrl, Date releaseDate) {
         this.id = id;
         this.name = name;
         this.tagline = tagline;
-        this.description = description;
+        this.description =( description != null && !description.isEmpty()) ? description : "No description available";
         this.minute = minute;
         this.rating = (rating != null) ? rating : 0.0; ;
         this.posterUrl = posterUrl;
+        this.releaseDate = releaseDate;
+
     }
 
     public String getName() {
@@ -76,6 +81,13 @@ public class MoviesDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }
 
