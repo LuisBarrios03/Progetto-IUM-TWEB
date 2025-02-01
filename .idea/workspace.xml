@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Partials/Chatbox.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/socket.io/socket.io.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,18 +24,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "iursraa"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/LuisBarrios03/Progetto-IUM-TWEB.git",
-    "accountId": "09c8b8f0-8506-4da8-8349-2c63ccaaf87d"
-  }
-}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -54,8 +44,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "branch-israa",
-    "last_opened_file_path": "C:/Users/hp.LAPTOP-54KFQGSR/Desktop/PROGETTI/solution/IUM-TWEB",
+    "git-widget-placeholder": "branchIrene",
+    "last_opened_file_path": "C:/Users/irene/Desktop/Progetto-IUM-TWEB",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,7 +74,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
       </set>
     </attachedChunks>
   </component>
@@ -105,7 +95,8 @@
       <workItem from="1738078462522" duration="427000" />
       <workItem from="1738078907152" duration="45000" />
       <workItem from="1738157554090" duration="1803000" />
-      <workItem from="1738248884393" duration="76000" />
+      <workItem from="1738362214620" duration="1749000" />
+      <workItem from="1738416161692" duration="2271000" />
     </task>
     <servers />
   </component>
