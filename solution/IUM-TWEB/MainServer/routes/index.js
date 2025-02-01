@@ -18,10 +18,9 @@ router.get('/Oscars', function(req, res, next) {
 router.get('/Login', function(req, res, next) {
   res.render('Pages/Login.hbs', { title: 'Login', showSearch: false });
 });
+
 router.get('/FilmScheda', function(req, res, next) {
-  res.render('Pages/FilmScheda.hbs', { title: 'Express' });
-});
-router.get('/Attori', function(req, res, next) {
-  res.render('Pages/Attori.hbs', { title: 'Express' });
-});
+  res.render('Pages/FilmScheda.hbs', { title: 'Register', showSearch: false });
+})
+
 module.exports = router;

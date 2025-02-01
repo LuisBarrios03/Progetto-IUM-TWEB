@@ -12,8 +12,8 @@ public class MoviesDTO {
     private Double rating;
     private String posterUrl;
     private Date releaseDate;
-
     public MoviesDTO(){}
+
 
     public MoviesDTO(Long id, String name, String tagline, String description, Long minute, Double rating, String posterUrl, Date releaseDate) {
         this.id = id;
@@ -26,6 +26,7 @@ public class MoviesDTO {
         this.releaseDate = releaseDate;
 
     }
+
 
     public String getName() {
         return name;
