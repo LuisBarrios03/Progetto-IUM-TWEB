@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/views/Pages/film.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/socket.io/socket.io.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +44,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "branchIrene-Israa",
-    "last_opened_file_path": "C:/Users/irene/Desktop/Progetto-IUM-TWEB/solution/IUM-TWEB/MainServer",
+    "git-widget-placeholder": "branchIrene",
+    "last_opened_file_path": "C:/Users/irene/Desktop/Progetto-IUM-TWEB",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,6 +95,8 @@
       <workItem from="1738078462522" duration="427000" />
       <workItem from="1738078907152" duration="45000" />
       <workItem from="1738157554090" duration="1803000" />
+      <workItem from="1738362214620" duration="1749000" />
+      <workItem from="1738416161692" duration="2271000" />
     </task>
     <servers />
   </component>
