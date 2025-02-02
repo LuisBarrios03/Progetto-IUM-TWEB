@@ -43,6 +43,7 @@ exports.getAllDataTheOscarAwards = async (req,res) => {
 }
 
 
+//@returns the most recent 100 Oscar Awards
 exports.get100OscarAwards = async (req, res) => {
     try {
         const oscars = await modelTheOscarAwards
