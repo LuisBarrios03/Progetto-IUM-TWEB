@@ -1,30 +1,10 @@
 <div onload="init()">
-
-    <div class="container card mt-2 pt-3 px-3 mb-5 d-flex flex-row">
-        <div class="container card mt-2 pt-3 px-3 mb-5 d-flex flex-row">
-            <div id="OscarsContainer" class="col-10">
-                <div class="row mb-2">
-                    <div class=" col span-4">Nome del film:<text id="movie-name"></text></div>
-                    <div class="movie-year col span-4">Anno di rilascio del film:<text id="movie-year"></text></div>
-                    <div class="col span-4"></div>
-                </div>
-                <div class="row mb-2">
-                    <div class="col span-4">Categoria del nominato:<text id="nominato"></text></div>
-                    <div class="col span-4">Nome del nominato: <text id="nome-nom"></text></div>
-                    <div class="col span-4">Vincitore? <text id="vincitore"></text></div>
-                </div>
-                <div class="row mb-2">
-                    <div class=" col span-4">Anno nomina: <text id="anno-nom"></text></div>
-                    <div class="col span-4">Numero totale delle cerimonie svolte: <text id="ncer"></text></div>
-                    <div class="col span-4"></div>
-                </div>
-            </div>
-        </div>
+    <div class="container mt-3">
+        <h1>Oscar più recenti:</h1>
     </div>
+    {{> HorizontalCard}}
 
-    <div class="text-center mb-3">
-        <button id="carica20Os" class="btn btn-primary">Carica Altro</button>
-    </div>
     {{> Chatbox}}
 </div>
 <script src="Js/index_Oscars.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>

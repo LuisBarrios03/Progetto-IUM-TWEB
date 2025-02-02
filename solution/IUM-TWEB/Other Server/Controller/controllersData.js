@@ -43,16 +43,12 @@ exports.getAllDataTheOscarAwards = async (req,res) => {
 }
 
 
-exports.get20OscarAwards = async (req, res) => {
+exports.get100OscarAwards = async (req, res) => {
     try {
-        let page = parseInt(req.query.page) || 0; // Pagina corrente (di default 0)
-        let size = parseInt(req.query.size) || 20; // Numero di elementi per pagina (default 20)
-
         const oscars = await modelTheOscarAwards
             .find()
-            .sort({ year: -1 }) // Ordina dal più recente al più vecchio
-            .skip(page * size) // Salta le pagine precedenti
-            .limit(size); // Limita il numero di risultati
+            .sort({ year_ceremony: -1 }) // Ordina per cerimonia, dalla più recente alla più vecchia
+            .limit(100); // Limita il numero di risultati
 
         if (oscars.length === 0) {
             return res.status(404).json({ success: false, message: "Nessun Oscar trovato" });

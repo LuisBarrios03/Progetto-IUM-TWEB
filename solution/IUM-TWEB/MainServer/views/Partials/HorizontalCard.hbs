@@ -1,21 +1,16 @@
-<div class="container card mt-2 pt-3 px-3 mb-5 d-flex flex-row">
-    <div class="container card mt-2 pt-3 px-3 mb-5 d-flex flex-row">
-        <div id="OscarsContainer" class="col-10">
-            <div class="row mb-2">
-                <div id="movie-name" class=" col span-4">Nome del film: {{film}}</div>
-                <div id="movie-year" class="movie-year col span-4">Anno di rilascio del film: {{year_film}}</div>
-                <div  class="col span-4"></div>
-            </div>
-            <div class="row mb-2">
-                <div id="nominato" class="col span-4">Categoria del nominato: {{category}}</div>
-                <div id="nome-nom" class="col span-4">Nome del nominato: {{name}}</div>
-                <div id="vincitore" class="col span-4">Vincitore? {{#if winner}}sì{{else}}no{{/if}}</div>
-            </div>
-            <div class="row mb-2">
-                <div id="anno-nom" class=" col span-4">Anno nomina: {{year_ceremony}}</div>
-                <div id="ncer" class=" col span-4">Numero totale delle cerimonie svolte: {{ceremony}}</div>
-                <div class="col span-4"></div>
-            </div>
-        </div>
+<div id="OscarsContainer" class="col">
+    <div class="row mb-2">
+        <div class=" col span-5"><text id="movie-name"></text></div>
+        <div class="movie-year col span-5"><text id="movie-year"></text></div>
+        <div class="col span-2"><text id="vincitore"></text></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col span-6"><text id="nominato"></text></div>
+        <div class="col span-6"><text id="nome-nom"></text></div>
+    </div>
+    <div class="row mb-2">
+        <div class=" col span-4"><text id="anno-nom"></text></div>
+        <div class="col span-4"><text id="ncer"></text></div>
+        <div class="col span-4"></div>
     </div>
 </div>
