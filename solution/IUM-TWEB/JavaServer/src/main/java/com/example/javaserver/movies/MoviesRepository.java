@@ -34,9 +34,9 @@ public interface MoviesRepository extends JpaRepository<Movies, Long> {
     @Query("SELECT m.id , m.name , m.description, m.date, m.rating,m.tagline,m.minute,p.link FROM Movies m JOIN m.posters p WHERE m.rating IS NOT NULL AND  m.date = 2024  AND  m.rating<=5 ORDER BY m.rating DESC")
     List<Object[]> findTopRatedMovies(Pageable pageable);
 
-    @Query("SELECT m.id,m.name,m.posters.link,m.rating FROM Movies m " +
+    @Query("SELECT DISTINCT m.id,m.name,m.posters.link,m.rating FROM Movies m " +
             "JOIN m.genre g " +   // Assicurati che 'genre' sia la proprietà corretta della classe 'Movies'
-            "WHERE (m.name LIKE CONCAT('%', :title, '%') OR :title IS NULL) " +
+            "WHERE (LOWER(m.name) LIKE LOWER(CONCAT('%', :title, '%')) OR :title IS NULL)  " +
             "AND (g.genre IN :genres OR :genres IS NULL) " +  // Assicurati che 'g.genre' sia la proprietà corretta della classe 'Genres'
             "AND (m.minute <= :duration OR :duration IS NULL) " +
             "AND (m.rating >= :rating OR :rating IS NULL) " +

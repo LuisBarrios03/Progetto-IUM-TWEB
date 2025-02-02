@@ -92,7 +92,7 @@ public class MoviesController {
             @RequestParam(required = false) Double rating,
             @RequestParam(required = false) Integer year,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "9") int size
+            @RequestParam(defaultValue = "20") int size
     ) {
         List<Map<String, Object>> movie = moviesService.searchMovies(title, genres, duration, rating, year, page, size);
         if (movie == null || movie.isEmpty()) {
