@@ -46,7 +46,7 @@ exports.getAllDataTheOscarAwards = async (req,res) => {
 exports.get20OscarAwards = async (req, res) => {
     try {
         let page = parseInt(req.query.page) || 0; // Pagina corrente (di default 0)
-        let size = parseInt(req.query.size) || 2; // Numero di elementi per pagina (default 20)
+        let size = parseInt(req.query.size) || 20; // Numero di elementi per pagina (default 20)
 
         const oscars = await modelTheOscarAwards
             .find()

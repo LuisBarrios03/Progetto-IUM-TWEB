@@ -1,7 +1,26 @@
 <div onload="init()">
-    {{#each oscars}} <!--   per ogni oscar genera una card-->
-        {{> horizontalcards}}
-    {{/each}}
+
+    <div class="container card mt-2 pt-3 px-3 mb-5 d-flex flex-row">
+        <div class="container card mt-2 pt-3 px-3 mb-5 d-flex flex-row">
+            <div id="OscarsContainer" class="col-10">
+                <div class="row mb-2">
+                    <div class=" col span-4">Nome del film:<text id="movie-name"></text></div>
+                    <div class="movie-year col span-4">Anno di rilascio del film:<text id="movie-year"></text></div>
+                    <div class="col span-4"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col span-4">Categoria del nominato:<text id="nominato"></text></div>
+                    <div class="col span-4">Nome del nominato: <text id="nome-nom"></text></div>
+                    <div class="col span-4">Vincitore? <text id="vincitore"></text></div>
+                </div>
+                <div class="row mb-2">
+                    <div class=" col span-4">Anno nomina: <text id="anno-nom"></text></div>
+                    <div class="col span-4">Numero totale delle cerimonie svolte: <text id="ncer"></text></div>
+                    <div class="col span-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="text-center mb-3">
         <button id="carica20Os" class="btn btn-primary">Carica Altro</button>
