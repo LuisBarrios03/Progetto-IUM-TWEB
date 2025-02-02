@@ -26,16 +26,11 @@ exports.getAllDataRottenTomatoes = async (req,res) => {
 }
 exports.getAllDataTheOscarAwards = async (req,res) => {
     try{
-        //const CollectionRottenTomatoes = await modelRottenTomatoes.find().limit(100);
-        //console.log(CollectionRottenTomatoes);
         const CollectionTheOscarAwards = await  modelTheOscarAwards.find().limit(100);
-        //console.log(CollectionTheOscarAwards);
         res.json({
             success: true,
             data:{
-                //rottenTomatoesReviews : CollectionRottenTomatoes,
                 theOscarAwards : CollectionTheOscarAwards,
-
             },
         });
     }catch (error){
@@ -46,3 +41,28 @@ exports.getAllDataTheOscarAwards = async (req,res) => {
         });
     }
 }
+
+
+//@returns the most recent 100 Oscar Awards
+exports.get100OscarAwards = async (req, res) => {
+    try {
+        const oscars = await modelTheOscarAwards
+            .find()
+            .sort({ year_ceremony: -1 }) // Ordina per cerimonia, dalla più recente alla più vecchia
+            .limit(100); // Limita il numero di risultati
+
+        if (oscars.length === 0) {
+            return res.status(404).json({ success: false, message: "Nessun Oscar trovato" });
+        }
+        res.json({
+            success: true,
+            data: oscars,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Errore nel recupero dei dati degli Oscar",
+            error: error.message,
+        });
+    }
+};
