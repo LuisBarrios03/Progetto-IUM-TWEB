@@ -1,4 +1,5 @@
 package com.example.javaserver.movies;
+import com.example.javaserver.genres.Genres;
 import com.example.javaserver.releases.Releases;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -44,7 +45,6 @@ public class MoviesService {
             movie.put("description", result[3]);
             movies.add(movie);
         }
-        System.out.println(movies);
         return movies;
     }
 
@@ -68,7 +68,36 @@ public class MoviesService {
         }
 
         return movies;
+    }
 
-        //return moviesRepository.findTopRatedMovies(pageable);
+    public List<Map<String, Object>> searchMovies(String title, List<String> genres, Integer duration, Double rating, Integer year, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        List<Object[]> results = moviesRepository.searchMovies(title, genres, duration, rating, year, pageable);
+        List<Map<String, Object>> movies = new ArrayList<>();
+        for (Object[] result : results) {
+            Map<String, Object> movie = new HashMap<>();
+            movie.put("id", result[0]);
+            movie.put("name", result[1]);
+            movie.put("link", result[2]);
+            movie.put("rating", result[3]);
+            movies.add(movie);
+
+        }
+        return movies;
+    }
+
+    public List<Map<String, Object>> searchNameActor(String actorName){
+        List<Object[]> results = moviesRepository.findMoviesByActorName(actorName);
+        List<Map<String, Object>> movies = new ArrayList<>();
+        for (Object[] result : results) {
+            Map<String, Object> movie = new HashMap<>();
+            movie.put("id", result[0]);
+            movie.put("rating", result[1]);
+            movie.put("role", result[2]);
+            movie.put("name", result[3]);
+            movie.put("link", result[4]);
+            movies.add(movie);
+        }
+        return movies;
     }
 }

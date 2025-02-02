@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
-@RequestMapping("api/genres")
+@RequestMapping("genres")
 public class GenresController {
 
     private final GenresService genresService;
@@ -47,5 +48,14 @@ public class GenresController {
         // Restituisce i generi con status 200 (OK)
         return ResponseEntity.ok(genres);
         //return genresService.getGenreById(id);
+    }
+
+    @GetMapping("getAllGenres")
+    public ResponseEntity<List<Map<String, Object>>> GetAllGenres(){
+        List<Map<String, Object>> genres = genresService.getAllGenre();
+        if (genres == null || genres.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(genres);
     }
 }
