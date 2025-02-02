@@ -52,4 +52,45 @@ router.get('/FilmSearched', async function(req, res, next) {
   }
 });
 
+router.get('/Actors',  async function(req, res, next) {
+  const actorName = req.query.name;
+
+  // Verifica che il parametro actorName sia presente
+  if (!actorName) {
+    return res.render('Pages/Actors', {
+      title: 'Results',
+      showSearch: false,
+      movies: [],
+      error: "Nessun attore specificato."
+    });
+  }
+
+  try {
+    // Fai la richiesta al server esterno utilizzando 'actorName' come parametro
+    let response = await axios.get(`http://localhost:8080/movies/name?actorName=${encodeURIComponent(actorName)}`);
+
+    // Estrai i film dalla risposta
+    let movies = response.data;
+
+    // Renderizza la pagina con i film trovati
+    res.render('Pages/Actors', {
+      title: 'Results',
+      showSearch: false,
+      movies: movies
+    });
+
+  } catch (error) {
+    // Gestione degli errori
+    console.error("Errore nel caricamento dei film:", error);
+
+    res.render('Pages/Actors', {
+      title: 'Results',
+      showSearch: false,
+      movies: [],
+      error: "Errore nel caricamento dei film."
+    });
+  }
+})
+
+
 module.exports = router;

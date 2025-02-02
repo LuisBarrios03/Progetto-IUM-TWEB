@@ -22,14 +22,7 @@ public class MoviesController {
         this.moviesService = moviesService;
     }
 
-    @GetMapping("/name/{name}")
-    public ResponseEntity <List<Movies>> moviesByName(@PathVariable String name) {
-        List<Movies> movie = moviesService.moviesByName(name);
-        if(movie == null || movie.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-        return ResponseEntity.ok(movie);
-    }
+
 
     @GetMapping("/id/{id}")
     public ResponseEntity <List<Movies>> moviesById(@PathVariable Long id) {
@@ -103,4 +96,12 @@ public class MoviesController {
         return ResponseEntity.ok(movie);
     }
 
+    @GetMapping("/name")
+    public ResponseEntity<List<Map<String, Object>>> getAllMoviesbyNameActor(@RequestParam String actorName) {
+        List<Map<String, Object>> movie = moviesService.searchNameActor(actorName);
+        if (movie == null || movie.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(movie);
+    }
 }

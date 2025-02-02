@@ -50,4 +50,9 @@ public interface MoviesRepository extends JpaRepository<Movies, Long> {
             Pageable pageable
     );
 
+    @Query("SELECT m.id, m.rating, a.role, m.name,m.posters.link " +
+            "FROM Movies m " +
+            "JOIN m.actors a " +
+            "WHERE a.name  like %:actorName% ")
+    List<Object[]> findMoviesByActorName(@Param("actorName") String actorName);
 }

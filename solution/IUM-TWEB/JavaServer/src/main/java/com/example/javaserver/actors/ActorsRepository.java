@@ -18,7 +18,7 @@ public interface ActorsRepository extends JpaRepository<Actors, idActors> {
     List<Actors> findActorsByMovie(@Param("name") String movieName);
 
     //2. Fetch movies participated by a specific actor by their name
-    @Query("SELECT m FROM Movies m INNER JOIN m.actors a WHERE a.name = :actorName")
+    @Query("SELECT m.id ,m.name,m.rating FROM Movies m WHERE m.name = : actorName ")
     List<Movies> findMoviesByActorName(@Param("actorName") String actorName);
 
 }

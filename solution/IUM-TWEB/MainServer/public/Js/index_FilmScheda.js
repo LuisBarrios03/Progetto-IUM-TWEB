@@ -21,8 +21,10 @@ async function fetchFilmData() {
         const genres = film.genre.map(genre => `${genre.genre}`).join(', ');
         document.getElementById('FilmGenre').innerText = genres;
 
-        const actors = film.actors.map(actor => `${actor.name} as ${actor.role}`).join(', ');
-        document.getElementById('filmActors').innerText = actors;
+        const actors = film.actors.map(actor =>
+            `<a href="/Actors?name=${actor.name}" class="text-primary">${actor.name}</a> as ${actor.role}`
+        ).join(', ');
+        document.getElementById('filmActors').innerHTML = actors;
 
         const language = film.languages.map(language => `${language.language}`).join(', ');
         document.getElementById('filmLanguage').innerText = language;
@@ -62,7 +64,7 @@ function generateStars(rating) {
 
 function getMovieIdFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('id'); // Restituisce l'ID dalla query string
+    return urlParams.get('id');
 }
 
 function init() {

@@ -85,4 +85,19 @@ public class MoviesService {
         }
         return movies;
     }
+
+    public List<Map<String, Object>> searchNameActor(String actorName){
+        List<Object[]> results = moviesRepository.findMoviesByActorName(actorName);
+        List<Map<String, Object>> movies = new ArrayList<>();
+        for (Object[] result : results) {
+            Map<String, Object> movie = new HashMap<>();
+            movie.put("id", result[0]);
+            movie.put("rating", result[1]);
+            movie.put("role", result[2]);
+            movie.put("name", result[3]);
+            movie.put("link", result[4]);
+            movies.add(movie);
+        }
+        return movies;
+    }
 }
