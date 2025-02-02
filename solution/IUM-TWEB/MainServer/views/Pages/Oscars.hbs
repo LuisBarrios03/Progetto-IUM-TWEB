@@ -1,11 +1,7 @@
-<div onload="init()">
-    <div class="container mt-3 d-flex justify-content-between">
-        <h1>Ultime nomine agli Oscar:</h1>
-        <button class="btn btn-primary"  onclick="scrollToChat()">Chatta con la community</button>
-    </div>
+<div>
     {{> HorizontalCard}}
+    <div class="text-center mb-3">
+        <button class="btn btn-primary">Carica Altro</button>
+    </div>
+    {{> Chatbox}}
 </div>
-{{>Chatbox}}
-
-<script src="Js/index_Oscars.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
