@@ -1,7 +1,5 @@
-
 async function loadOscarsData(){
     try{
-
         const response = await axios.get(`http://localhost:3001/api/20dataOscar`);
         const oscars = response.data.data;
         console.log(oscars);
@@ -39,10 +37,14 @@ async function loadOscarsData(){
     }
 
 }
+
+function scrollToChat() {
+    document.getElementById("chatbox").scrollIntoView({ behavior: "smooth" });
+}
+
+
+
 function init() {
     loadOscarsData();
 }
 
-
-// Aggiungi evento per il bottone "Carica Altro"
-document.querySelector(".btn-primary").addEventListener("click", loadOscarsData);
