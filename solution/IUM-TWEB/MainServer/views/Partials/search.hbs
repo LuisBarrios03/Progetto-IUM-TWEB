@@ -1,8 +1,8 @@
 <div class="container mt-4 search-container">
     <!-- Barra di ricerca -->
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Cerca...">
-        <button class="btn btn-outline-secondary" type="button" id="loadMoreButton">
+        <input type="text" class="form-control" placeholder="Cerca..." id ="searchTitle">
+        <button class="btn btn-outline-secondary" type="button" id="loadMoreButton" >
             <img class="filter" src="img/Filtro.png" alt="Filtro" onclick="toggleFilters()">
         </button>
         <button class="btn btn-outline-secondary" type="button" onclick="searchMovies()" id="searchButton">
@@ -13,16 +13,12 @@
     <!-- Barra filtri (inizialmente nascosta) -->
     <div class="filters" id="filters">
         <div class="row g-2">
-            <div class="col-md">
+           <!-- <div class="col-md">
                 <input type="text" class="form-control" placeholder="Titolo" id="searchTitle">
-            </div>
+            </div>-->
             <div class="col-md">
                 <select class="form-control" id="searchGenre">
-                    <option selected>Genere</option>
-                    <option>Azione</option>
-                    <option>Commedia</option>
-                    <option>Dramma</option>
-                    <option>Horror</option>
+
                 </select>
             </div>
             <div class="col-md">

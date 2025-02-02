@@ -22,5 +22,31 @@ router.get('/Login', function(req, res, next) {
 router.get('/FilmScheda', function(req, res, next) {
   res.render('Pages/FilmScheda.hbs', { title: 'Register', showSearch: false });
 })
+router.get('/FilmSearched', async function(req, res, next) {
+  try {
+    let queryString = Object.entries(req.query)
+        .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+        .join("&");
+
+    let response = await axios.get(`http://localhost:8080/movies/search?${queryString}`);
+    let movies = response.data;
+
+    res.render('Pages/FilmSearched', {
+      title: 'Results',
+      showSearch: false,
+      movies: movies
+    });
+
+  } catch (error) {
+    console.error("Errore nel caricamento dei film:", error);
+    res.render('Pages/FilmSearched', {
+      title: 'Results',
+      showSearch: false,
+      movies: [],
+      error: "Errore nel caricamento dei film."
+    });
+  }
+
+})
 
 module.exports = router;

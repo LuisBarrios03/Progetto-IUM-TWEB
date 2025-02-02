@@ -45,7 +45,6 @@ public class MoviesService {
             movie.put("description", result[3]);
             movies.add(movie);
         }
-        System.out.println(movies);
         return movies;
     }
 
@@ -84,7 +83,6 @@ public class MoviesService {
             movies.add(movie);
 
         }
-        System.out.println(movies);
         return movies;
     }
 }

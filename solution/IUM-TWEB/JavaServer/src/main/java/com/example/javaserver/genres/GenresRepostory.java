@@ -12,6 +12,7 @@ public interface GenresRepostory extends JpaRepository<Genres,idGenres> {
     @Query("SELECT g FROM Genres g WHERE g.id = :id")
     List<Genres> findGenreById(@Param("id") Long id);
 
-
+    @Query("SELECT DISTINCT g.genre FROM Genres g ")
+    List<Object[]>allGenres();
 
 }
