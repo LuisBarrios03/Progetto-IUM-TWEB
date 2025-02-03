@@ -22,7 +22,7 @@ async function loadOscarsData(){
                 </div>
                 <div class="row mb-2">
                     <div class="col span-4"><strong>Anno nomina: </strong><text>${oscar.year_ceremony}</text></div>
-                    <div class="col span-4"><strong>Numero cerimonie: </strong><text>${oscar.ceremony}</text></div>
+                    <div class="col span-4"><strong>Cerimonia numero: </strong><text>${oscar.ceremony}</text></div>
                     <div class="col span-4"></div>
                 </div>
             </div>
