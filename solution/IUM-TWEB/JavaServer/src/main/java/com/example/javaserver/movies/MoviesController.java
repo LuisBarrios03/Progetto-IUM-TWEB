@@ -104,4 +104,16 @@ public class MoviesController {
         }
         return ResponseEntity.ok(movie);
     }
+    @GetMapping("/recent")
+    public ResponseEntity<List<Map<String, Object>>>getRecentMovies() {
+        // Paginazione personalizzata
+        final Pageable pageable = PageRequest.of(0,15);
+        List<Map<String, Object>> movie = moviesService.FindMostRecent(pageable);
+        if (movie == null || movie.isEmpty()) {
+            // Se non ci sono risultati, restituisci un 404 (NOT FOUND)
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        // Se ci sono risultati, restituisci un 200 OK con i dati
+        return ResponseEntity.ok(movie);
+    }
 }

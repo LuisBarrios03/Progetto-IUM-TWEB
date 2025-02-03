@@ -55,4 +55,8 @@ public interface MoviesRepository extends JpaRepository<Movies, Long> {
             "JOIN m.actors a " +
             "WHERE a.name  like %:actorName% ")
     List<Object[]> findMoviesByActorName(@Param("actorName") String actorName);
+
+
+    @Query("SELECT m.id , m.name , m.description, m.date, m.rating,m.tagline,m.minute,p.link FROM Movies m JOIN m.posters p WHERE m.rating IS NOT NULL AND  m.date = 2024  AND  m.rating<=5 ORDER BY m.date ASC")
+    List<Object[]> findMostRecent(Pageable pageable);
 }

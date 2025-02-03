@@ -99,4 +99,23 @@ public class MoviesService {
         }
         return movies;
     }
+
+    public List<Map<String, Object>> FindMostRecent(Pageable pageable) {
+        List<Object[]> results = moviesRepository.findMostRecent(pageable);
+
+        List<Map<String, Object>> movies = new ArrayList<>();
+        for (Object[] obj : results) {
+            Map<String, Object> movie = new HashMap<>();
+            movie.put("id", obj[0]);
+            movie.put("name", obj[1]);
+            movie.put("description", obj[2]);
+            movie.put("date", obj[3]);
+            movie.put("rating", obj[4]);
+            movie.put("tagline", obj[5]);
+            movie.put("minute", obj[6]);
+            movie.put("link", obj[7]);
+            movies.add(movie);
+        }
+        return movies;
+    }
 }
