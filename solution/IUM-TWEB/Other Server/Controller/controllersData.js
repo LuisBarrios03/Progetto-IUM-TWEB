@@ -66,3 +66,28 @@ exports.get100OscarAwards = async (req, res) => {
         });
     }
 };
+
+
+
+//@returns oscasr found by search
+exports.getOscars = async (req, res) => {
+    try {
+        const { film } = req.query;
+        const oscars = await modelTheOscarAwards
+            .find({ film: new RegExp(film, 'i') }) // Filtra per nome del film, ignorando maiuscole/minuscole
+            .sort({ year_ceremony: -1 }) // Ordina per cerimonia, dalla più recente alla più vecchia
+        if (oscars.length === 0) {
+            return res.status(404).json({ success: false, message: "Nessun Oscar trovato" });
+        }
+        res.json({
+            success: true,
+            data: oscars,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Errore nel recupero dei dati degli Oscar",
+            error: error.message,
+        });
+    }
+};

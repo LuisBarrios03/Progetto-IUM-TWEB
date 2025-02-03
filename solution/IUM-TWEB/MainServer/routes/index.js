@@ -12,7 +12,7 @@ router.get('/Films', function(req, res, next) {
 });
 
 router.get('/Oscars', function(req, res, next) {
-  res.render('Pages/Oscars.hbs', { title: 'Oscars', showSearch: true });
+  res.render('Pages/Oscars.hbs', { title: 'Oscars', showSearch: false });
 });
 
 router.get('/Login', function(req, res, next) {
@@ -91,6 +91,11 @@ router.get('/Actors',  async function(req, res, next) {
     });
   }
 })
+
+
+router.get('/oscarsSearched', (req, res) => {
+  res.render('Pages/OscarsSearched.hbs', { film: req.query.film });
+});
 
 
 module.exports = router;
