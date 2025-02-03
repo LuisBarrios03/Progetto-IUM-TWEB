@@ -68,7 +68,7 @@ public class MoviesController {
     @GetMapping("/TopRate")
     public ResponseEntity<List<Map<String, Object>>>getTopRatedMovies() {
         // Paginazione personalizzata
-        final Pageable pageable = PageRequest.of(0,9);
+        final Pageable pageable = PageRequest.of(0,15);
         List<Map<String, Object>> movie = moviesService.findTopRatedMovies(pageable);
         if (movie == null || movie.isEmpty()) {
             // Se non ci sono risultati, restituisci un 404 (NOT FOUND)

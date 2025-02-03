@@ -1,40 +1,32 @@
 <div id="chatbox" class="container d-flex flex-column rounded mt-5 mb-5" style=" border: 1px solid #d2d2d2; height: 500px;">
     <!-- Intestazione della chat -->
     <div class="p-2" style="border-bottom: 1px solid #d2d2d2;">
-        <h1>Nome dalla chat</h1>
+        <h1>Comment :</h1>
     </div>
 
     <!-- Corpo della chat -->
-    <div class="flex-grow-1 p-3 d-flex flex-column justify-content-between">
-        <div class="d-flex flex-row mb-2" >
-            <div class="col-1">
-                <img src="/img/account.png" alt="immagine profilo" style="width: 60%; height: auto;">
-            </div>
-            <div class="col-11 d-flex flex-column">
-                <h3>Nome utente</h3>
-                <p>
-                    Sample del testo del commento sample del testo del commento sample del testo del commento
-                    sample del testo del commento sample del testo del commento sample del testo del commento.
-                </p>
-            </div>
-        </div>
+    <div class="flex-grow-1 p-3 d-flex flex-column justify-content-between" id="chatContainer">
+        <!-- Messaggi della chat -->
+        <div id="chatMessages" class="flex-grow-1 overflow-auto"></div>
+    </div>
 
-        <!-- Commento utente-->
-        <div class="d-flex flex-row p-3" style="border-top: 1px solid #d2d2d2;">
-            <div class="col-1">
-                <img src="/img/account.png" alt="immagine profilo" style="width: 75%; height: auto;">
-            </div>
-            <div class="col-11">
-                <h3>Nome utente</h3>
-                <div class="d-flex flex-row">
-                    <div class="flex-grow-1 pe-2">
-                        <textarea class="form-control" placeholder="Inserisci commento" rows="2" id="comment" name="text"></textarea>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary" style="height: 100%;">Invia</button>
-                    </div>
+    <!-- Input per il commento -->
+    <div class="d-flex flex-row p-3 align-items-end" style="border-top: 1px solid #d2d2d2;">
+        <div class="col-1">
+            <img src="/img/account.png" alt="Immagine profilo" style="width: 75%; height: auto;">
+        </div>
+        <div class="col-11">
+            <h3 id="chatUsername">Anonimo</h3>
+            <div class="d-flex flex-row align-items-end">
+                <div class="flex-grow-1 pe-2">
+                    <textarea class="form-control" placeholder="Inserisci messaggio" rows="2" id="messageInput" style="resize: none;"></textarea>
+                </div>
+                <div>
+                    <button class="btn btn-primary" id="sendMessageBtn">Invia</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="Js/chat.js"></script>

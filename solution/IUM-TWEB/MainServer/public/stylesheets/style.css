@@ -125,3 +125,9 @@ h2{
 .centerText{
   text-align: center;
 }
+#messageInput {
+  width: 100%;
+  min-height: 50px;
+  max-height: 100px;
+  overflow-y: auto;
+}

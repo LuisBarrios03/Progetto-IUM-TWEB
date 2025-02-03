@@ -39,7 +39,7 @@ public interface MoviesRepository extends JpaRepository<Movies, Long> {
             "WHERE (LOWER(m.name) LIKE LOWER(CONCAT('%', :title, '%')) OR :title IS NULL)  " +
             "AND (g.genre IN :genres OR :genres IS NULL) " +  // Assicurati che 'g.genre' sia la proprietà corretta della classe 'Genres'
             "AND (m.minute <= :duration OR :duration IS NULL) " +
-            "AND (m.rating >= :rating OR :rating IS NULL) " +
+            "AND (m.rating <= :rating OR :rating IS NULL) " +
             "AND (m.date = :year OR :year IS NULL)")
     List<Object[]> searchMovies(
             @Param("title") String title,

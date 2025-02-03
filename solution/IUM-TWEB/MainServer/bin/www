@@ -88,9 +88,6 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-
-
-// Import Socket.io
 const socketIO = require('socket.io');
 const io = socketIO(server);
-require('socket.io')(io);
+require('../socket.io/socket.io')(io);
