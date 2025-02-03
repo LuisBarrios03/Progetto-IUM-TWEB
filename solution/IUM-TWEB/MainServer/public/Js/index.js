@@ -1,7 +1,11 @@
 function initNavBar() {
+    if (!sessionStorage.getItem("sessionActive")) {
+        localStorage.removeItem("username"); // Cancella i dati salvati
+        sessionStorage.setItem("sessionActive", "true"); // Imposta sessione attiva
+    }
+
     let username = localStorage.getItem("username");
     let userSection = document.getElementById("userSection");
-
     if (username) {
         // Se l'utente ha fatto il login, mostra il nome utente e il pulsante logout
         userSection.innerHTML = `

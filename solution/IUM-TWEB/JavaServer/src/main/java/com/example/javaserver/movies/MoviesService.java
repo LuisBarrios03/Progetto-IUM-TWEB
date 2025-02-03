@@ -66,7 +66,6 @@ public class MoviesService {
             movie.put("link", obj[7]);
             movies.add(movie);
         }
-
         return movies;
     }
 
