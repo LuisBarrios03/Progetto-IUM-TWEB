@@ -8,12 +8,21 @@ const axios = require('axios');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+const fs = require('fs');
 
 var app = express();
 
 app.use(cors({ origin: 'http://localhost:3000' }));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+
+const swaggerFileJPA = path.join(__dirname, 'Swagger Documentation', 'swaggerJPAServer.json');
+const swaggerDataJPA = JSON.parse(fs.readFileSync(swaggerFileJPA, 'utf8'));
+app.use('/swaggerJPAServer', swaggerUi.serve, swaggerUi.setup(swaggerDataJPA));
+const swaggerFileOther = path.join(__dirname, 'Swagger Documentation', 'swaggerOtherServer.json');
+const swaggerDataOther = JSON.parse(fs.readFileSync(swaggerFileOther, 'utf8'));
+app.use('/swaggerOtherServer', swaggerUi.serve, swaggerUi.setup(swaggerDataOther));
 
 // Register Handlebars as view engine
 const {engine} = require('express-handlebars');

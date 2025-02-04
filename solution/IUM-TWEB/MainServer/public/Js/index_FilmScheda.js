@@ -10,11 +10,10 @@ async function fetchFilmData() {
         const responseDataCountries = await axios.get(`http://localhost:8080/countries/id/${movieId}`);
         const responseDataCrews = await axios.get(`http://localhost:8080/crews/id/${movieId}`);
         const responseDataThemes = await axios.get(`http://localhost:8080/themes/id/${movieId}`);
-        console.log(responseDataThemes);
         const film = response.data[0];
         const countries = responseDataCountries;
         const DataCrews = responseDataCrews.data;
-
+        const DataThemes = responseDataThemes.data;
 
         document.getElementById("filmRelease").innerText = film.date;
         document.getElementById('filmTitle').innerText = film.name;
@@ -46,6 +45,9 @@ async function fetchFilmData() {
         /*const country = countries.country.map(country =>`${country.country}` ).join(', ');*/
         const country  = countries.data.map(country => `${country.country}`).join(', ');
         document.getElementById('filmCountry').innerText = country;
+
+        const themes = responseDataThemes.data.map(theme => `${theme.theme}`).join(', ');
+        document.getElementById('filmTheme').innerText = themes;
 
 
     } catch (error) {

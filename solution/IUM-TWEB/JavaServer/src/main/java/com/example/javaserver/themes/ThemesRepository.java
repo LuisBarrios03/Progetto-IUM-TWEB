@@ -7,10 +7,17 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Repository interface for Themes entities.
+ */
 @Repository
 public interface ThemesRepository extends JpaRepository<Themes, IdThemes> {
-    // Query per ottenere tutti i temi con i relativi film
-    //trovo i temi in base al nome del film
-    @Query("SELECT t.id,t.theme FROM Themes t WHERE t.id = :id")
+    /**
+     * Finds themes by the specified ID.
+     *
+     * @param id the ID of the theme
+     * @return a list of themes
+     */
+    @Query("SELECT t.id, t.theme FROM Themes t WHERE t.id = :id")
     List<Object[]> findThemesByID(@Param("id") Long id);
 }
