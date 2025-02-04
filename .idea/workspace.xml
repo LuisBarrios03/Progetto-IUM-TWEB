@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca1badd6-5483-462f-ad05-32a0a85b5a61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/solution/IUM/actors.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM/countries.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solution/IUM/movies.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Progetto-IUM-TWEB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Progetto-IUM-TWEB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution/IUM-TWEB/MainServer/socket.io/socket.io.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -44,8 +48,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "branchIrene",
-    "last_opened_file_path": "C:/Users/irene/Desktop/Progetto-IUM-TWEB",
+    "git-widget-placeholder": "branch__irene",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/irene/Desktop/IUM-PYTHON/PROVA_PROGETTO",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,7 +79,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
+        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
       </set>
     </attachedChunks>
   </component>
@@ -97,6 +103,7 @@
       <workItem from="1738157554090" duration="1803000" />
       <workItem from="1738362214620" duration="1749000" />
       <workItem from="1738416161692" duration="2271000" />
+      <workItem from="1738701599862" duration="1988000" />
     </task>
     <servers />
   </component>
