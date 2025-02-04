@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 
 import java.sql.Date;
 
+/**
+ * Entity class for Releases.
+ */
 @Entity
 @Table(name= "releases")
 @IdClass(IdReleases.class)
@@ -22,14 +25,24 @@ public class Releases {
     private String rating;
 
     @ManyToOne
-    // Collega "id" di ReleasesId con la chiave primaria di Movie
     @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
-    private Movies movie; // Relazione molti-a-uno con Movies
+    private Movies movie; // Many-to-one relationship with Movies
 
-    //constructor
+    /**
+     * Default constructor for Releases.
+     */
     public Releases() {
     }
 
+    /**
+     * Constructor for Releases with parameters.
+     *
+     * @param id the ID of the release
+     * @param country the country of the release
+     * @param date the date of the release
+     * @param type the type of the release
+     * @param rating the rating of the release
+     */
     public Releases(Long id, String country, Date date, String type, String rating) {
         this.id = id;
         this.country = country;
@@ -54,4 +67,3 @@ public class Releases {
     public String getRating() {return rating;}
     public void setRating(String rating) {this.rating = rating;}
 }
-

@@ -9,49 +9,42 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+import java.util.Map;
 
+/**
+ * REST controller for managing crews.
+ */
 @Controller
-@RequestMapping("/api/crews")
+@RequestMapping("crews")
 public class CrewsController {
     private final CrewsService crewsService;
 
+    /**
+     * Constructs a CrewsController with the specified CrewsService.
+     *
+     * @param crewsService the service for managing crews
+     */
     @Autowired
     public CrewsController(CrewsService crewsService) {
         this.crewsService = crewsService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<Crews>> getAllCrews() {
-        List<Crews> crews = crewsService.getAllCrews();
+    /**
+     * Retrieves crews by the specified ID.
+     *
+     * @param id the ID of the crew
+     * @return a ResponseEntity containing the list of crews
+     */
+    @GetMapping("id/{id}")
+    public ResponseEntity<List<Map<String, Object>>> findCrewsById(@PathVariable Long id) {
+        List<Map<String, Object>> crews = crewsService.getByid(id);
 
         if (crews == null || crews.isEmpty()) {
-            // Restituisce 404 (Not Found) se la lista è vuota o null
+            // Returns 404 (Not Found) if no crews are found
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
 
-        // Restituisce 200 (OK) con la lista dei crews
+        // Returns 200 (OK) with the list of crews
         return ResponseEntity.ok(crews);
     }
-
-
-    @GetMapping("find/{nameMovie}")
-    public ResponseEntity<List<Crews>> findCrewsByName(@PathVariable String nameMovie) {
-        List<Crews> crews = crewsService.getFindByMovieName(nameMovie);
-
-        if (crews == null || crews.isEmpty()) {
-            // Restituisce 404 (Not Found) se non ci sono risultati
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-
-        // Restituisce 200 (OK) con la lista dei crews
-        return ResponseEntity.ok(crews);
-    }
-    @GetMapping("find-by-id/{id}")
-    public ResponseEntity<List<Crews>> findCrewsById(@PathVariable Long id) {
-        List<Crews> crews = crewsService.getByid(id);
-
-        if(crews == null || crews.isEmpty()) { return  ResponseEntity.status(HttpStatus.NOT_FOUND).build(); }
-        return ResponseEntity.ok(crews);
-    }
-
 }

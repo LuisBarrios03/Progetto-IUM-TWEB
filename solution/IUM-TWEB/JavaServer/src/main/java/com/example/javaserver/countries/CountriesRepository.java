@@ -1,23 +1,24 @@
 package com.example.javaserver.countries;
 
-import com.example.javaserver.movies.Movies;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
+/**
+ * Repository interface for managing countries.
+ */
+@Repository
 public interface CountriesRepository extends JpaRepository<Countries, idCountries> {
 
-    @Query("SELECT c.country FROM Countries c JOIN c.movie m WHERE m.name= :movieName")
-    List<String> findCountriesByMovieByName(@Param("movieName") String movieName);
-
-    @Query("SELECT COUNT(m) AS numFilms, c.country AS countryName FROM Movies m JOIN m.countries c GROUP BY c.country")
-    List<Object[]> findNumFilmsByCountry();
-
-    @Query("SELECT c  FROM Countries c JOIN c.movie m WHERE m.id = :id")
-    List<Countries> findCountriesByCountryId(@Param("id") Long id);
+    /**
+     * Finds countries by the specified movie ID.
+     *
+     * @param id the ID of the movie
+     * @return a list of countries associated with the specified movie
+     */
+    @Query("SELECT c.country FROM Countries c JOIN c.movie m WHERE m.id = :id")
+    List<Object[]> findCountriesByCountryId(@Param("id") Long id);
 }

@@ -1,3 +1,4 @@
+
 async function fetchFilmData() {
     try {
         const movieId = getMovieIdFromUrl();
@@ -6,7 +7,14 @@ async function fetchFilmData() {
         }
 
         const response = await axios.get(`http://localhost:8080/movies/id/${movieId}`);
+        const responseDataCountries = await axios.get(`http://localhost:8080/countries/id/${movieId}`);
+        const responseDataCrews = await axios.get(`http://localhost:8080/crews/id/${movieId}`);
+        const responseDataThemes = await axios.get(`http://localhost:8080/themes/id/${movieId}`);
+        console.log(responseDataThemes);
         const film = response.data[0];
+        const countries = responseDataCountries;
+        const DataCrews = responseDataCrews.data;
+
 
         document.getElementById("filmRelease").innerText = film.date;
         document.getElementById('filmTitle').innerText = film.name;
@@ -29,11 +37,17 @@ async function fetchFilmData() {
         const language = film.languages.map(language => `${language.language}`).join(', ');
         document.getElementById('filmLanguage').innerText = language;
 
-        const crews = film.crews.map(crew => `${crew.name} as ${crew.role}`).join(', ');
+        const crews = DataCrews.map(crew => `${crew.name} as ${crew.role}`).join(', ');
         document.getElementById('crewDescription').innerText = crews;
 
         const studios = film.studio.map(studio => `${studio.studio}`).join(', ');
         document.getElementById('filmStudio').innerText = studios;
+
+        /*const country = countries.country.map(country =>`${country.country}` ).join(', ');*/
+        const country  = countries.data.map(country => `${country.country}`).join(', ');
+        document.getElementById('filmCountry').innerText = country;
+
+
     } catch (error) {
         console.error('Errore nel caricamento dei dati del film:', error);
     }

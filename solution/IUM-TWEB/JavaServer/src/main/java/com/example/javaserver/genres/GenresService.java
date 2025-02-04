@@ -8,21 +8,28 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Service class for managing genres.
+ */
 @Service
 public class GenresService {
     private final GenresRepostory genresRepostory;
 
+    /**
+     * Constructs a GenresService with the specified GenresRepostory.
+     *
+     * @param genresRepostory the repository for managing genres
+     */
     @Autowired
     public GenresService(GenresRepostory genresRepostory) {
         this.genresRepostory = genresRepostory;
     }
 
-    public List<Genres> getAllGenres(){
-        return genresRepostory.findAll();
-    }
-    public List<Genres> getGenreById(Long id){
-        return genresRepostory.findGenreById(id);
-    }
+    /**
+     * Retrieves all genres.
+     *
+     * @return a list of maps containing genre details
+     */
     public List<Map<String, Object>> getAllGenre(){
         List<Object[]> results = genresRepostory.allGenres();
         List<Map<String, Object>> genres = new ArrayList<>();

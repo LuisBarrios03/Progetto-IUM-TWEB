@@ -6,24 +6,32 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service class for managing actors.
+ */
 @Service
 public class ActorsService {
     //define object repository
     private final ActorsRepository actorsRepository;
 
+    /**
+     * Constructs an ActorsService with the specified ActorsRepository.
+     *
+     * @param actorsRepository the repository for actors
+     */
     @Autowired
     public ActorsService(ActorsRepository actorsRepository) {
         this.actorsRepository = actorsRepository;
     }
-    public List<Actors> findAllActors() {
-        return actorsRepository.findAll();
-    }
 
-    public List<Actors>findActorsByMovieName(String movieName) {
-        return actorsRepository.findActorsByMovie(movieName);
-    }
 
-    public List<Movies>findMoviesByActorName(String actorName) {
+    /**
+     * Retrieves movies by the specified actor name.
+     *
+     * @param actorName the name of the actor
+     * @return a list of movies featuring the specified actor
+     */
+    public List<Movies> findMoviesByActorName(String actorName) {
         return actorsRepository.findMoviesByActorName(actorName);
     }
 }

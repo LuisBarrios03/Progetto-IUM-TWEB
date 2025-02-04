@@ -6,9 +6,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api/themes")
+@RequestMapping("themes")
 public class ThemesController {
     @Autowired
     private final ThemesService themesService;
@@ -17,15 +18,12 @@ public class ThemesController {
         this.themesService = themesService;
     }
 
-    @GetMapping("/")
-    public List<Themes> getAllThemes() {
-        return themesService.getAllThemes();
-    }
-
-    @GetMapping("/themes-by-movie/{movieName}")
-    public ResponseEntity<List<Object[]>> getThemesByMovie(@PathVariable String movieName){
-        List<Object[]> themes = themesService.getThemesByMovieName(movieName);
-        if(themes == null || themes.isEmpty()) {return ResponseEntity.status(HttpStatus.NOT_FOUND).build();}
+    @GetMapping("/id/{id}")
+    public ResponseEntity<List<Map<String, Object>>> GetById(@PathVariable Long id){
+        List<Map<String, Object>> themes = themesService.getThemesById(id);
+        if(themes == null || themes.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
         return ResponseEntity.ok(themes);
     }
 }

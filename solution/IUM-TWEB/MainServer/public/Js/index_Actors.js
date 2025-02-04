@@ -37,7 +37,7 @@ async function init() {
                         <div class="card-body">
                             <h5 class="card-title">${actor.name}</h5>
                             <p>${stars} ${rating.toFixed(2)}</p>
-                             <a href="/FilmScheda?id=${actor.id}" class="btn btn-primary">Dettagli</a>
+                             <a href="/FilmScheda?id=${actor    .id}" class="btn btn-primary">Dettagli</a>
                         </div>
                     </div>
                 </div>`;

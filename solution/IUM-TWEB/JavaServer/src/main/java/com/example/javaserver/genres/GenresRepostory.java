@@ -6,13 +6,16 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface GenresRepostory extends JpaRepository<Genres,idGenres> {
+/**
+ * Repository interface for managing genres.
+ */
+public interface GenresRepostory extends JpaRepository<Genres, idGenres> {
 
-    // Trova un genere per id
-    @Query("SELECT g FROM Genres g WHERE g.id = :id")
-    List<Genres> findGenreById(@Param("id") Long id);
-
+    /**
+     * Retrieves all genres.
+     *
+     * @return a list of objects containing genre details
+     */
     @Query("SELECT DISTINCT g.genre FROM Genres g ")
-    List<Object[]>allGenres();
-
+    List<Object[]> allGenres();
 }
