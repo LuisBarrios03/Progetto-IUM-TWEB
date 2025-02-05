@@ -1,14 +1,18 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Movie API",
-    "description": "API per la gestione di film, crew, temi e premi Oscar",
+    "title": "Oscar & Movie API",
+    "description": "API per la gestione dei dati sugli Oscar e dei film",
     "version": "1.0.0"
   },
   "servers": [
     {
       "url": "http://localhost:8080",
-      "description": "Server locale"
+      "description": "Server Movie API"
+    },
+    {
+      "url": "http://localhost:3001",
+      "description": "Server Oscar API"
     }
   ],
   "paths": {
@@ -112,6 +116,29 @@
         "summary": "Ottiene tutti i generi",
         "responses": {
           "200": { "description": "Lista dei generi" }
+        }
+      }
+    },
+    "/api/20dataOscar": {
+      "get": {
+        "summary": "Ottiene i dati Oscar",
+        "responses": {
+          "200": { "description": "Dati Oscar trovati" }
+        }
+      }
+    },
+    "/api/findOscar": {
+      "get": {
+        "summary": "Cerca un film vincitore di Oscar",
+        "parameters": [
+          {
+            "name": "film",
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Film Oscar trovato" }
         }
       }
     }

@@ -40,7 +40,6 @@ public class ThemesService {
             theme.put("theme", obj[1]);
             themes.add(theme);
         }
-        System.out.println(themes);
         return themes;
     }
 }

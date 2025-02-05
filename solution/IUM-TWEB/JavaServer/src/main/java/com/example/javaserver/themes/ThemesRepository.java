@@ -18,6 +18,6 @@ public interface ThemesRepository extends JpaRepository<Themes, IdThemes> {
      * @param id the ID of the theme
      * @return a list of themes
      */
-    @Query("SELECT t.id, t.theme FROM Themes t WHERE t.id = :id")
+    @Query("SELECT t.id, t.theme FROM Themes t WHERE t.id = :id ")
     List<Object[]> findThemesByID(@Param("id") Long id);
 }
