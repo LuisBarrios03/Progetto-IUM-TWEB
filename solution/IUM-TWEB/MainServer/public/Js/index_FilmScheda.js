@@ -1,3 +1,4 @@
+
 async function fetchFilmData() {
     try {
         const movieId = getMovieIdFromUrl();
@@ -6,13 +7,31 @@ async function fetchFilmData() {
         }
 
         const response = await axios.get(`http://localhost:8080/movies/id/${movieId}`);
+        const responseDataCountries = await axios.get(`http://localhost:8080/countries/id/${movieId}`);
+        const responseDataCrews = await axios.get(`http://localhost:8080/crews/id/${movieId}`);
+
+        let DataThemes = [];
+        try {
+            const responseDataThemes = await axios.get(`http://localhost:8080/themes/id/${movieId}`);
+            DataThemes = responseDataThemes.data;
+        } catch (error) {
+            if (error.response && error.response.status === 404) {
+                console.warn(`Nessun tema trovato per il film con ID ${movieId}`);
+            } else {
+                console.error("Errore nella richiesta dei temi:", error);
+            }
+        }
+
         const film = response.data[0];
+        const countries = responseDataCountries;
+        const DataCrews = responseDataCrews.data;
 
         document.getElementById("filmRelease").innerText = film.date;
         document.getElementById('filmTitle').innerText = film.name;
         document.getElementById('filmPoster').src = film.posters.link;
         document.getElementById('filmDuration').innerText = film.minute + " minuti";
         document.getElementById('filmRating').innerText = film.rating.toFixed(2);
+
         let rating = film.rating !== null ? film.rating : 0;
         let stars = generateStars(rating);
         document.getElementById("startRating").innerHTML = stars;
@@ -29,15 +48,23 @@ async function fetchFilmData() {
         const language = film.languages.map(language => `${language.language}`).join(', ');
         document.getElementById('filmLanguage').innerText = language;
 
-        const crews = film.crews.map(crew => `${crew.name} as ${crew.role}`).join(', ');
+        const crews = DataCrews.map(crew => `${crew.name} as ${crew.role}`).join(', ');
         document.getElementById('crewDescription').innerText = crews;
 
         const studios = film.studio.map(studio => `${studio.studio}`).join(', ');
         document.getElementById('filmStudio').innerText = studios;
+
+        const country  = countries.data.map(country => `${country.country}`).join(', ');
+        document.getElementById('filmCountry').innerText = country;
+
+        const themes = DataThemes.length > 0 ? DataThemes.map(theme => theme.theme).join(', ') : "N.A.";
+        document.getElementById('filmTheme').innerText = themes;
+
     } catch (error) {
         console.error('Errore nel caricamento dei dati del film:', error);
     }
 }
+
 function generateStars(rating) {
     let stars = "";
     const fullStars = Math.floor(rating); // Numero di stelle piene

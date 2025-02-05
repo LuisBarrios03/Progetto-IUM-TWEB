@@ -8,12 +8,16 @@ const axios = require('axios');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const cors = require('cors');
-
+const swaggerUi = require('swagger-ui-express');
+const fs = require('fs');
+const setupSwagger = require('./routes/swaggerConfig');
 var app = express();
 
 app.use(cors({ origin: 'http://localhost:3000' }));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+
+setupSwagger(app);
 
 // Register Handlebars as view engine
 const {engine} = require('express-handlebars');

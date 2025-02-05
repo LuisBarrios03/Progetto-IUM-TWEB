@@ -7,19 +7,18 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
+/**
+ * Repository interface for managing languages.
+ */
 @Repository
-public interface LanguagesRepository  extends JpaRepository<Languages, LanguagesId> {
-    //trova le lingue per nome della lingua
-    @Query("SELECT l FROM Languages l WHERE l.language LIKE %:language%")
-    List<Languages> findLanguage(@Param("language") String language);
+public interface LanguagesRepository extends JpaRepository<Languages, LanguagesId> {
 
-    //trova le lingue per tipologia
-    @Query("SELECT l FROM Languages l WHERE l.type LIKE %:type%")
-    List<Languages> findLanguagesByType(@Param("type") String type);
-
-    //test primi 100
-    List<Languages>findTop100ByOrderByIdAsc();
-
-    //trova le lingue per movie(uso del join)
+    /**
+     * Retrieves languages by the specified ID.
+     *
+     * @param id the ID of the language
+     * @return a list of objects containing language details
+     */
+    @Query("SELECT l.language, l.type FROM Languages l WHERE l.id = :id")
+    List<Object[]> findLanguageByid(@Param("id") Long id);
 }

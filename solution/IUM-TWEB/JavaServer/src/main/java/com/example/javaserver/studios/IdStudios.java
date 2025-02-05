@@ -2,8 +2,17 @@ package com.example.javaserver.studios;
 
 import java.io.Serializable;
 
+/**
+ * Composite key class for Studios entity.
+ */
 public class IdStudios implements Serializable {
-    private Long id; // Chiave esterna che si riferisce a Movies.id
-    private String studio; // Nome dello studio
-}
+    /**
+     * Foreign key referring to Movies.id.
+     */
+    private Long id;
 
+    /**
+     * Name of the studio.
+     */
+    private String studio;
+}

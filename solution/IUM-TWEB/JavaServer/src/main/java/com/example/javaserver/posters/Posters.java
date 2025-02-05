@@ -6,11 +6,13 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+/**
+ * Entity class for Posters.
+ */
 @Entity
 @Table(name= "posters")
 @IdClass(PostersId.class)
 public class Posters {
-
 
     @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", nullable = false)
@@ -23,7 +25,7 @@ public class Posters {
     @Column(name= "link", nullable= false, columnDefinition= "TEXT")
     private String link;
 
-    //constructor
+    // Constructor
     public Posters() {}
 
     public Posters(Long id, String link) {
@@ -45,5 +47,4 @@ public class Posters {
     public void setLink(String link) {
         this.link = link;
     }
-
 }

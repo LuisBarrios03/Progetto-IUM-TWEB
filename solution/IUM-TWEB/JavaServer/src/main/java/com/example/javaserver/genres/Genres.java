@@ -3,11 +3,13 @@ package com.example.javaserver.genres;
 import com.example.javaserver.movies.Movies;
 import jakarta.persistence.*;
 
+/**
+ * Entity class representing a genre.
+ */
 @Entity
 @Table(name= "genres")
 @IdClass(Genres.class)
 public class Genres {
-    //@ID non esiste sui campi di Java, solo nella conversione al db (indirizzo di memoria, come un indice)
     @Id
     private Long id;
 
@@ -16,21 +18,31 @@ public class Genres {
     private String genre;
 
     @ManyToOne
-    @JoinColumn(name = "id",referencedColumnName = "id")
+    @JoinColumn(name = "id", referencedColumnName = "id")
     private Movies movie;
 
-    //constructor
+    /**
+     * Default constructor.
+     */
     public Genres() {}
 
+    /**
+     * Constructs a Genres with the specified ID and genre.
+     *
+     * @param id the ID of the genre
+     * @param genre the name of the genre
+     */
     public Genres(Long id, String genre) {
         this.id = id;
         this.genre = genre;
     }
 
+    // Getters and setters
 
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -38,8 +50,8 @@ public class Genres {
     public String getGenre() {
         return genre;
     }
+
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
 }

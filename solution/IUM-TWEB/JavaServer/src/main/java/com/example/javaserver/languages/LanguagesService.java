@@ -1,38 +1,44 @@
 package com.example.javaserver.languages;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+/**
+ * Service class for managing languages.
+ */
 @Service
 public class LanguagesService {
     private final LanguagesRepository languagesRepository;
-    //done
+
+    /**
+     * Constructs a LanguagesService with the specified LanguagesRepository.
+     *
+     * @param languagesRepository the repository for managing languages
+     */
     @Autowired
     public LanguagesService(LanguagesRepository languagesRepository) {
         this.languagesRepository = languagesRepository;
     }
 
-    List<Languages> getAllLanguages() {
-        return languagesRepository.findAll();
+    /**
+     * Retrieves languages by the specified ID.
+     *
+     * @param id the ID of the language
+     * @return a list of maps containing language details
+     */
+    public List<Map<String, Object>> findLanguage(Long id) {
+        List<Object[]> results = languagesRepository.findLanguageByid(id);
+        List<Map<String, Object>> languages = new ArrayList<>();
+        for (Object[] row : results) {
+            Map<String, Object> language = new HashMap<>();
+            language.put("id", row[0]);
+            languages.add(language);
+        }
+        return languages;
     }
-
-    public List<Languages> findLanguage(String language) {
-        return languagesRepository.findLanguage(language);
-    }
-
-    public List<Languages> findLanguagesByType(String type) {
-        return languagesRepository.findLanguagesByType(type);
-    }
-
-
-    public List<Languages> getTop100Languages(){//??to remove??
-        return languagesRepository.findTop100ByOrderByIdAsc();
-    };
 }
